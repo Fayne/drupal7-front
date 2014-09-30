@@ -1,0 +1,11 @@
+footer{
+  background: $footer-bg-color;
+  color: $footer-color;
+  padding-top: $section-distance;
+  padding-bottom: $section-distance;
+}
+footer a{
+  color: $footer-color;
+  &:hover{ color: $footer-highlight-color; }
+  &:active{ color: $footer-highlight-color; }
+}

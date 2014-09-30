@@ -1,0 +1,11 @@
+name = Grassland Menu
+description = CSS/jQuery drop-down and drop-up menus to be placed in blocks
+dependencies[] = menu
+core = 7.x
+
+; Information added by fayne on 2014-09-17
+version = "7.x-1.0"
+core = "7.x"
+project = "grassland"
+datestamp = "1410948571"
+

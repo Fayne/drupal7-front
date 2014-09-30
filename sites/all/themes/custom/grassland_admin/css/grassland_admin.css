@@ -1,0 +1,180 @@
+.nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 16%;
+}
+.node-form .form-item-domain-site{
+    display: none;
+}
+.node-form .form-item-domain-source{
+    display: none;
+}
+.node-form .filter-wrapper{
+    display: none;
+}
+.node-form .form-item:not(.form-type-radio) > label {
+    display: inline-block;
+    float: left;
+    max-width: 150px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+.node-form .form-item:not(.form-type-radio) > label, .node-form .field-type-datetime-form fieldset legend {
+    margin-left: -165px;
+}
+.node-form div.form-wrapper, .node-form div.form-item-title, .node-form div.form-checkboxes {
+    clear: left;
+    /*overflow: hidden;*/
+}
+.node-form div.form-wrapper, .node-form div.form-item-title, .node-form .field-type-datetime-form fieldset, .node-form div.form-type-checkboxes, .node-form div.form-type-checkbox {
+    padding-left: 165px;
+}
+.node-form .field-type-number-integer, .node-form .field-type-number-float{
+    float: left;
+    width: 50%;
+}
+.node-form .field-type-number-integer:nth-child(odd), .node-form .field-type-number-float:nth-child(odd){
+    clear: left;
+}
+.node-form .field-type-number-integer:nth-child(even), .node-form .field-type-number-float:nth-child(even){
+    clear: none;
+}
+.node-form .field-type-number-integer .form-text, .node-form .field-type-number-float .form-text{
+    max-width: 200px;
+}
+.node-form .form-item {
+    margin: 0;
+}
+.views-table, .sticky-table{
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.views-table thead > tr > th, .views-table tbody > tr > th, .views-table tfoot > tr > th, .views-table thead > tr > td, .views-table tbody > tr > td, .views-table tfoot > tr > td,
+.sticky-table thead > tr > th, .sticky-table tbody > tr > th, .sticky-table tfoot > tr > th, .sticky-table thead > tr > td, .sticky-table tbody > tr > td, .sticky-table tfoot > tr > td{
+    padding: 10px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+td.checkbox, th.checkbox{
+    display: table-cell;
+}
+fieldset{
+    background-color: #ffffff;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.node-form .vertical-tabs{
+    background-color: #ffffff;
+    border-radius: 0 4px 4px 0;
+}
+legend{
+    background-color: #ffffff;
+    border-radius: 4px 4px 0 0;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px 15px;
+    border-color: #eff2f7;
+    margin-bottom: 10px;
+}
+.node-form .form-item{
+    margin-bottom: 15px;
+}
+.fieldset-wrapper{
+    padding: 10px;
+}
+#edit-domain legend{
+    display: none;
+}
+.node-form .form-text, .node-form .form-select, .form-item-operation .form-select {
+    border: 1px solid #e2e2e4;
+    box-shadow: none;
+    color: #c2c2c2;
+    background-color: #ffffff;
+    background-image: none;
+    border-radius: 4px;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    vertical-align: middle;
+    width: 100%;
+}
+[name="operation"].form-select{
+    display: inline-block;
+    width: auto;
+}
+html.js input.form-autocomplete {
+    background-position: 100% 12px;
+}
+html.js input.throbbing{
+    background-position: 100% -13px;
+}
+input[type="file"], .views-table .views-field-edit-node > a {
+    display: inline-block;
+    background-color: #f1c500;
+    border-color: #f1c500;
+    color: #ffffff;
+    padding: 6px 12px;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+input[type="submit"] {
+    display: inline-block;
+    background-color: #78cd51;
+    border-color: #f1c500;
+    padding: 6px 12px;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+input[type="submit"] + input[type="submit"]{
+    margin-left: 10px;
+}
+.node-form input[type="file"].form-file, .node-form input[type="submit"].form-submit{
+    margin-right: 10px;
+}
+.views-table thead tr{
+    background: #FFFFFF;
+}
+.views-table .views-field-edit-node a{
+    padding: 2px 6px;
+}
+.views-ui-display-tab-bucket.header{
+    position: relative;
+    z-index: 0;
+}
+.view .add-content{
+    position: absolute;
+    right: 0;
+    top: -40px;
+}
+
+/* TODO */
+.region-sidebar-left > div:first-child{
+    display: none;
+}

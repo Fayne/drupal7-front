@@ -1,0 +1,47 @@
+name = Grassland Admin
+description = A Bootstrap Admin theme for Grassland.
+package = Grassland
+version = VERSION
+core = 7.x
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation]     = 'Navigation'
+regions[header]         = 'Top Bar'
+regions[content]        = 'Content'
+regions[sidebar_left]   = 'Left Sidebar'
+regions[footer]         = 'Footer'
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Features
+;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = bootstrap/dist/css/bootstrap.min.css
+stylesheets[all][] = bootstrap/dist/css/bootstrap-reset.css
+stylesheets[all][] = assets/font-awesome/css/font-awesome.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/style-responsive.css
+stylesheets[all][] = css/grassland_admin.css
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+
+; scripts[] = js/jquery.js
+; scripts[] = bootstrap/dist/js/bootstrap.min.js
+; scripts[] = js/jquery.dcjqaccordion.2.7.js
+; scripts[] = js/jquery.scrollTo.min.js
+; scripts[] = js/jquery.nicescroll.js
+; scripts[] = js/respond.min.js
+; scripts[] = js/common-scripts.js
+; scripts[] = js/grassland_admin.js
+
+settings[bootstrap_cdn] = ''

@@ -1,0 +1,112 @@
+// define color: color/background-color/border-color
+$main-color : #1a9a3b;
+$font-color: #848484;
+$font-header-color: #c2c2c2;
+$reverse-color: #ffffff;
+$footer-bg-color: #333333;
+$footer-color: #9b9b9b;
+$footer-highlight-color: #dddddd;
+$main-bg-color: #f7f7f7;
+$header-bg-color: #ffffff;
+$border-color: #e6e6e6;
+$nav-color: #7f7f7f;
+$nav-hover-bg-color: #fcfcfc;
+$second-bg-color: #ffffff;
+$third-bg-color: #fcfcfc;
+$fourth-bg-color: #e6e6e6;
+
+// define section padding
+$section-distance: 20px;
+$bootstrap-distance: 15px;
+
+body{
+  color: $font-color;
+  background: $main-bg-color;
+}
+ul,li{
+  list-style: none;
+}
+a{
+  color: $main-color;
+  &:hover{
+    text-decoration: none;
+    color: $main-color;
+  }
+  &:focus{
+    outline: none;
+  }
+}
+.header_contacts{
+  background: $main-color;
+  font-weight: bold;
+  color: $reverse-color;
+  font-size: 15px;
+  margin-left: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 0 10px;
+  height: 34px;
+  line-height: 32px;
+  width: 223px;
+  a{
+    color: $reverse-color;
+    &:hover{
+      color: $reverse-color;
+    }
+    &:active{
+      color: $reverse-color;
+    }
+  }
+  .glyphicon{
+    margin-right: 10px;
+  }
+  .service{
+    border-left: 1px solid rgba(30, 30, 30, 0.29);
+    box-shadow: -1px 0 0 0 rgba(200, 200, 200, 0.5);
+    display: inline-block;
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+}
+.main-color{
+  color: $main-color;
+}
+.section-distance-top{
+  margin-top: $section-distance;
+}
+.section-distance-left{
+  margin-left: $section-distance;
+}
+.section-distance-right{
+  margin-right: $section-distance;
+}
+.section-distance-bottom{
+  margin-bottom: $section-distance;
+}
+.section-inner-left{
+  padding-left: $section-distance;
+}
+.section-inner-right{
+  padding-right: $section-distance;
+}
+.section-inner-top{
+  padding-top: $section-distance;
+}
+.section-inner-bottom{
+  padding-bottom: $section-distance;
+}
+.gl-title{
+  color: $main-color;
+  font-size: 18px;
+}
+.gl-title-lg{
+  font-size: 22px;
+  font-weight: bold;
+  height: 48px;
+  margin-bottom: $section-distance;
+  border-bottom: 1px solid $border-color;
+}
+// fixed full image width just display 99% issue(overwrite drupal default css)
+.panels-flexible-region-first.panels-flexible-region-last{
+  width: 100%;
+}

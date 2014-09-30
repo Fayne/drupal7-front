@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Module to enable CSS dropdown and flyout menus.
+ *
+ * Maintainer: Addison Berry (add1sun)
+ * Originally written by Jake Gordon (jakeg)
+ */
+
+/**
+ * Implements hook_view_table().
+ */
+function template_preprocess_grassland_admin_view_table(&$vars) {
+    var_dump($vars);
+}
