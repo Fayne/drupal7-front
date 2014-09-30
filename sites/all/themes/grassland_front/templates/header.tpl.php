@@ -36,7 +36,7 @@
 </div>
 <!-- // end default header -->
 <!-- mobile header -->
-<nav class="navbar navbar-default header-mobile hidden-md hidden-lg" role="navigation">
+<nav class="navbar navbar-static-top header-mobile visible-sm visible-xs" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
