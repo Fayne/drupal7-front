@@ -102,7 +102,7 @@ nav {
       color: #7f7f7f;
       border-top: none;
       border-bottom: 3px solid transparent; }
-      .nav-tabs li a:hover {
+      .nav-tabs li a:hover, .nav-tabs li a.active {
         border-radius: 0;
         border-top: none;
         border-bottom: 3px solid #1a9a3b;
