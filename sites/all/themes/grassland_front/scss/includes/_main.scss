@@ -1,3 +1,34 @@
+/** homepage */
+.view-id-slider_views {
+  position: relative;
+  .nivo-controlNav {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    a{
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      background: url(../images/bullets.png) no-repeat;
+      text-indent: -9999px;
+      border: 0;
+      margin: 0 2px;
+      cursor: pointer;
+    }
+    a.active{
+      background-position: 0 -22px;
+    }
+  }
+  .nivo-caption{
+    background: none repeat scroll 0 0 rgba(0,0,0,0.15);
+    padding-bottom: 50px;
+  }
+}
+/** end homepage */
+
+/** about */
 .main-content{
   background: $second-bg-color;
   margin-top: $section-distance;
@@ -47,3 +78,52 @@
     border-radius: 50%;
   }
 }
+/** end about */
+
+/** news */
+.news-category{
+  border-bottom: 1px solid $border-color;
+  li{
+    float: left;
+    width: 20%;
+    padding: 0 0 $section-distance $icon-distance;
+
+  }
+}
+.news-detail-list{
+  li{
+    padding-bottom: $section-distance;
+    border-bottom: 1px solid $border-color;
+  }
+  .news-image{
+    margin: $section-distance / 2 0;
+  }
+}
+.news-tags-pane, .news-date-pane{
+  margin-top: $section-distance;
+  margin-right: $section-distance;
+  border: 1px solid $border-color;
+  background-color: $third-bg-color;
+  .pane-title{
+    font-size: 1em;
+    font-weight: bold;
+    color: $second-font-color;
+    border-bottom: 1px solid $border-color;
+    padding: 0 0 $section-distance $section-distance;
+    margin-bottom: 0;
+  }
+  .item-list{
+    padding: $section-distance 0 0 $section-distance;
+    line-height: 2em;
+    a{
+      color: $font-color;
+      &:hover{
+        text-decoration: underline;
+      }
+      &.active{
+        color: $main-color;
+      }
+    }
+  }
+}
+/** end news */

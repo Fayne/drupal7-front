@@ -12,7 +12,7 @@
  *   added by Adaptivetheme in the appropriate process function.
  * - $panel_suffix: closing element for the $prefix.
  *
- * @see adaptivetheme_preprocess_two_66_33()
+ * @see adaptivetheme_preprocess_two_2x50()
  * @see adaptivetheme_preprocess_node()
  * @see adaptivetheme_process_node()
  */
@@ -25,31 +25,26 @@ $panel_prefix = isset($panel_prefix) ? $panel_prefix : '';
 $panel_suffix = isset($panel_suffix) ? $panel_suffix : '';
 ?>
 <?php print $panel_prefix; ?>
-<?php if ($content['two_66_33_top']): ?>
+<?php if ($content['two_2x50_top']): ?>
     <div class="row">
-        <div class="col-md-12 about-views-header">
-            <?php print $content['two_66_33_top']; ?>
+        <div class="col-md-12 panel-header">
+            <?php print $content['two_2x50_top']; ?>
+        </div>
+    </div>
+<?php endif; ?>
+<?php if ($content['two_2x50_middle']): ?>
+    <div class="row">
+        <div class="col-md-12 panel-middle">
+            <?php print $content['two_2x50_middle']; ?>
         </div>
     </div>
 <?php endif; ?>
     <div class="row">
-        <div class="col-md-8 about-views-main region-two-66-33-first">
-            <?php print $content['two_66_33_first']; ?>
+        <div class="col-md-6 panel-left">
+            <?php print $content['two_2x50_first']; ?>
         </div>
-        <div class="col-md-4 office-view-list region-two-66-33-second">
-            <?php print $content['two_66_33_second']; ?>
-        </div>
-    </div>
-    <div class="row section-inner-bottom">
-        <div class="col-md-12 "></div>
-    </div>
-<?php if ($content['two_66_33_bottom']): ?>
-    <div class="row region-two-66-33-bottom">
-        <div class="col-md-12 staff-views-list">
-            <div class="staff-list-container">
-                <?php print $content['two_66_33_bottom']; ?>
-            </div>
+        <div class="col-md-6 panel-right">
+            <?php print $content['two_2x50_second']; ?>
         </div>
     </div>
-<?php endif; ?>
 <?php print $panel_suffix; ?>

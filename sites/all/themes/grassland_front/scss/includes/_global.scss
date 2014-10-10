@@ -1,6 +1,7 @@
 // define color: color/background-color/border-color
 $main-color : #1a9a3b;
 $font-color: #848484;
+$second-font-color: #c0c0c0;
 $font-header-color: #c2c2c2;
 $reverse-color: #ffffff;
 $footer-bg-color: #333333;
@@ -18,6 +19,7 @@ $fourth-bg-color: #e6e6e6;
 // define section padding
 $section-distance: 20px;
 $bootstrap-distance: 15px;
+$icon-distance: 30px;
 
 body{
   color: $font-color;
@@ -33,6 +35,7 @@ a{
     color: $main-color;
   }
   &:focus{
+    color: $main-color;
     outline: none;
   }
 }
@@ -105,6 +108,11 @@ a{
   height: 48px;
   margin-bottom: $section-distance;
   border-bottom: 1px solid $border-color;
+}
+.gl-title-slg{
+  font-size: 30px;
+  font-weight: bold;
+  display: block;
 }
 // fixed full image width just display 99% issue(overwrite drupal default css)
 .panels-flexible-region-first.panels-flexible-region-last{
