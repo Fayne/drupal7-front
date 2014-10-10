@@ -27,22 +27,22 @@ $panel_suffix = isset($panel_suffix) ? $panel_suffix : '';
 <?php print $panel_prefix; ?>
 <?php if ($content['one_3x100_top']): ?>
     <div class="row">
-        <div class="col-md-12 products-views-header">
+        <div class="col-md-12">
             <?php print $content['one_3x100_top']; ?>
         </div>
     </div>
 <?php endif; ?>
 <?php if ($content['one_3x100_middle']): ?>
     <div class="row">
-        <div class="col-md-12 products-views-header">
+        <div class="col-md-12">
             <?php print $content['one_3x100_middle']; ?>
         </div>
     </div>
 <?php endif; ?>
 <?php if ($content['one_3x100_bottom']): ?>
     <div class="row">
-        <div class="col-md-12 staff-views-list">
-            <div class="staff-list-container">
+        <div class="col-md-12">
+            <div class="">
                 <?php print $content['one_3x100_bottom']; ?>
             </div>
         </div>

@@ -2,6 +2,7 @@
 $main-color : #1a9a3b;
 $font-color: #848484;
 $second-font-color: #c0c0c0;
+$third-font-color: #b0b0b0;
 $font-header-color: #c2c2c2;
 $reverse-color: #ffffff;
 $footer-bg-color: #333333;
@@ -30,14 +31,20 @@ ul,li{
 }
 a{
   color: $main-color;
-  &:hover{
+  &:hover, &:focus{
     text-decoration: none;
-    color: $main-color;
-  }
-  &:focus{
     color: $main-color;
     outline: none;
   }
+}
+h1, .h1, h2, .h2, h3, .h3{
+  margin: 0;
+}
+.panel-pane{
+  padding: $section-distance 0;
+  background: $second-bg-color;
+  border: 1px solid $border-color;
+  margin-bottom: $section-distance;
 }
 .header_contacts{
   background: $main-color;
@@ -113,6 +120,22 @@ a{
   font-size: 30px;
   font-weight: bold;
   display: block;
+}
+.third-bg-color{
+  background-color: $third-bg-color;
+}
+.button{
+  background-color: $main-color;
+  border-radius: 5px;
+  box-shadow: 1px 1px 0 0 $third-bg-color;
+  color: $reverse-color;
+  display: block;
+  font-weight: bold;
+  padding: $section-distance / 2 0;
+  text-align: center;
+  &:hover, &:focus{
+    color: $reverse-color;
+  }
 }
 // fixed full image width just display 99% issue(overwrite drupal default css)
 .panels-flexible-region-first.panels-flexible-region-last{

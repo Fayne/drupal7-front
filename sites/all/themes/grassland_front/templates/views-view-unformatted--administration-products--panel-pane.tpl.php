@@ -9,7 +9,7 @@
 ?>
 <div class="row">
 <?php foreach ($rows as $id => $row): ?>
-    <div class="col-md-4 col-sm-6 <?php if ($classes_array[$id]) { print $classes_array[$id];  } ?>">
+    <div class="<?php if ($classes_array[$id]) { print $classes_array[$id];  } ?>">
         <?php print $row; ?>
     </div>
 <?php endforeach; ?>
