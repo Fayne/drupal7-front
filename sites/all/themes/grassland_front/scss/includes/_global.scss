@@ -1,5 +1,6 @@
 // define color: color/background-color/border-color
 $main-color : #1a9a3b;
+$main-color-hover : #2faf3f;
 $font-color: #848484;
 $second-font-color: #c0c0c0;
 $third-font-color: #b0b0b0;
@@ -135,6 +136,23 @@ h1, .h1, h2, .h2, h3, .h3{
   text-align: center;
   &:hover, &:focus{
     color: $reverse-color;
+  }
+}
+.half{
+  display: inline-block;
+  width: 50%;
+}
+.main-content{
+  margin: $section-distance 0;
+}
+.page-node{
+  .main-content{
+    background-color: $second-bg-color;
+    border: 1px solid $border-color;
+  }
+  .panel-pane{
+    padding-top: 0;
+    border: none;
   }
 }
 // fixed full image width just display 99% issue(overwrite drupal default css)

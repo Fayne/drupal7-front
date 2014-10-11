@@ -26,59 +26,72 @@
     padding-bottom: 50px;
   }
 }
+.home-bottom-pane{
+  padding: 0;
+}
 /** end homepage */
 
 /** about */
-.main-content{
-  margin-top: $section-distance;
-  margin-bottom: $section-distance;
-}
-.about-views-header{
-  position: relative;
-  .about-header-img img{
-    width: 100%;
+.about-body{
+  .region-content{
+    background-color: $second-bg-color;
+    border: 1px solid $border-color;
+    margin: $section-distance 0;
   }
-  .about-header-caption{
-    bottom: $section-distance;
-    left: $section-distance;
-    font-size: 2em;
-    font-weight: bold;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    color: $reverse-color;
+  .panel-pane{
+    border: none;
+    padding: 0;
   }
-}
-.office-list-row{
-  padding-left: 30px;
-  padding-bottom: 20px;
-  line-height: 25px;
-  position: relative;
-  .glyphicon{
-    border-radius: 50%;
-    display: block;
-    font-size: 13px;
-    height: 22px;
-    left: 0;
-    line-height: 22px;
-    position: absolute;
-    text-align: center;
-    top: 3px;
-    width: 22px;
-    background: $main-bg-color;
-    color: $main-color;
+  .about-views-header{
+    position: relative;
+    .about-header-img img{
+      width: 100%;
+    }
+    .about-header-caption{
+      bottom: $section-distance;
+      left: $section-distance;
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      color: $reverse-color;
+    }
   }
-}
-.staff-list-container{
-  background: $third-bg-color;
-  padding: $section-distance;
-  border-top: 1px solid $border-color;
-  .staff-item img{
-    border-radius: 50%;
+  .office-list-row{
+    padding-left: 30px;
+    padding-bottom: 20px;
+    line-height: 25px;
+    position: relative;
+    .glyphicon{
+      border-radius: 50%;
+      display: block;
+      font-size: 13px;
+      height: 22px;
+      left: 0;
+      line-height: 22px;
+      position: absolute;
+      text-align: center;
+      top: 3px;
+      width: 22px;
+      background: $main-bg-color;
+      color: $main-color;
+    }
+  }
+  .staff-list-container{
+    .panel-pane{
+      background-color: transparent;
+    }
+    background-color: $third-bg-color;
+    padding: $section-distance;
+    border-top: 1px solid $border-color;
+    .staff-item img{
+      border-radius: 50%;
+    }
   }
 }
 /** end about */
 
-/** news */
+/** news list */
 .news-body{
   .region-content{
     background-color: $second-bg-color;
@@ -113,9 +126,10 @@
     margin-bottom: $section-distance / 2;
   }
 }
-.news-tags-pane, .news-date-pane{
+.panel-pane.news-tags-pane, .panel-pane.news-date-pane{
   margin-top: $section-distance;
   margin-right: $section-distance;
+  padding-top: $section-distance;
   border: 1px solid $border-color;
   background-color: $third-bg-color;
   .pane-title{
@@ -140,32 +154,43 @@
     }
   }
 }
-/** end news */
+/** end news list */
+
+/** news detail */
+.news-detail-inner{
+  padding: $section-distance;
+  img{
+    margin: $section-distance / 2 0;
+  }
+}
+/** end news detail */
 
 /** products */
-.product-list-item{
-  margin-bottom: $section-distance;
-  .product-item-inner{
-    border: 1px solid $border-color;
-    border-radius: 5px;
-    background-color: $third-bg-color;
-    .product-row{
-      background-color: $second-bg-color;
-      border-bottom: 1px solid $border-color;
-      line-height: 2.5em;
-      padding: 0 $section-distance;
-    }
-    .product-image-row{
-      background-color: $second-bg-color;
-      img{
-        width: 100%;
+.product-list-pane{
+  .product-list-item{
+    margin-bottom: $section-distance;
+    .product-item-inner{
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      background-color: $third-bg-color;
+      .product-row{
+        background-color: $second-bg-color;
+        border-bottom: 1px solid $border-color;
+        line-height: 2.5em;
+        padding: 0 $section-distance;
       }
-    }
-    .product-button-row{
-      padding: $section-distance;
-    }
-    .text-right{
-      color: $main-color;
+      .product-image-row{
+        background-color: $second-bg-color;
+        img{
+          width: 100%;
+        }
+      }
+      .product-button-row{
+        padding: $section-distance;
+      }
+      .text-right{
+        color: $main-color;
+      }
     }
   }
 }
@@ -203,10 +228,6 @@
 
 /** product detail */
 .node-type-product{
-  .main-content{
-    background-color: $second-bg-color;
-    border: 1px solid $border-color;
-  }
   .panel-pane{
     padding-top: 0;
     border: none;
@@ -244,9 +265,193 @@
     margin: 0 $section-distance;
     border: 1px solid $border-color;
     background-color: $third-bg-color;
+    padding: $section-distance * 2 $section-distance $section-distance;
+    .webform-component-fieldset{
+      border-bottom: 1px solid $border-color;
+      margin: $section-distance 0 $section-distance / 2;
+    }
+    .panel-default > .panel-heading{
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      border: none;
+      .panel-title{
+        color: $main-color;
+        font-size: 22px;
+        font-weight: bold;
+      }
+    }
+    .webform-component-markup{
+      border-bottom: 1px solid $border-color;
+      margin-bottom: $section-distance / 2;
+    }
+    .panel-body{
+      padding-left: 0;
+      padding-right: 0;
+      .form-item{
+        margin-bottom: $section-distance;
+        .form-control-postfix{
+          display: inline-block;
+          width: 93%;
+          width: calc(100% - 20px);
+        }
+        .field-suffix{
+          display: block;
+          float: right;
+          width: 20px;
+          line-height: 32px;
+          vertical-align: middle;
+          text-align: right;
+        }
+      }
+      .two-cols-first {
+        float: left;
+        margin-right: 10%;
+        width: 45%;
+      }
+      .two-cols-second {
+        float: left;
+        width: 45%;
+      }
+      .two-cols-radio{
+        .radio input{
+          margin-left: 0;
+        }
+        .form-type-radio:first-child{
+          display: inline-block;
+          margin-right: 10%;
+          width: 45%;
+        }
+        .form-type-radio:last-child{
+          display: inline-block;
+          width: 40%;
+        }
+      }
+    }
     .panel{
       background: transparent;
+    }
+    span.form-required{
+      color: red;
+    }
+    .webform-submit{
+      background: $main-color;
+      color: $reverse-color;
+      margin-top: $section-distance;
+      padding: $section-distance / 2 $section-distance * 3;
+      border-radius: 10px;
+      &:hover{
+        background: $main-color-hover;
+      }
     }
   }
 }
 /** end product detail */
+
+/** jobs list */
+.jobs-body{
+  p{
+    margin: 0;
+  }
+  .region-content{
+    background-color: $second-bg-color;
+    border: 1px solid $border-color;
+  }
+  .panel-pane{
+    border: none;
+  }
+  .jobs-image-pane{
+    padding: 0;
+  }
+  .jobs-list-pane{
+    padding-top: 0;
+    margin: 0 $section-distance;
+  }
+  .jobs-list-item{
+    padding-top: $section-distance;
+    border: 1px solid $border-color;
+    margin: 0 $section-distance $section-distance;
+    .gl-title{
+      border: none;
+      margin-bottom: $section-distance / 2;
+      height: auto;
+    }
+    .jobs-list-inner{
+      padding: 0 $section-distance;
+    }
+    .jobs-button-row{
+      padding: $section-distance;
+      margin-top: $section-distance;
+      border-top: 1px solid $border-color;
+
+
+    }
+  }
+}
+/** end jobs */
+
+/** job detail */
+.job-detail-inner{
+  padding: $section-distance;
+  .job-detail-table{
+    border-radius: 5px;
+    border: 1px solid $border-color;
+    margin-bottom: $section-distance * 2;
+    .title{
+      padding: $section-distance / 2 $section-distance;
+      border-radius: 5px 5px 0 0;
+      background-color: $third-bg-color;
+    }
+    .job-detail-field{
+      border-top: 1px solid $border-color;
+      padding: $section-distance / 2 $section-distance;
+      .lable-left{
+        float: left;
+        text-align: left;
+      }
+      .detail-right{
+        float: right;
+        text-align: right;
+      }
+    }
+  }
+  .job-description{
+    margin-bottom: $section-distance;
+  }
+  .buttons{
+    padding-top: $section-distance;
+    border-top: 1px solid $border-color;
+    .first{
+      padding-right: $section-distance;
+    }
+    .last{
+      padding-left: $section-distance;
+    }
+  }
+}
+.job-others-list-pane{
+  margin: $section-distance;
+  .pane-title .gl-title{
+    margin: 0;
+    opacity: 0;
+  }
+  .jobs-list-item{
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    margin-bottom: $section-distance;
+    .gl-title{
+      height: auto;
+      border: none;
+      margin: $section-distance / 2;
+    }
+    .jobs-list-inner{
+      padding: 0 $section-distance;
+      vertical-align: middle;
+    }
+    .jobs-button-row{
+      padding: $section-distance;
+      border-top: 1px solid $border-color;
+    }
+  }
+}
+/** end job detail */
