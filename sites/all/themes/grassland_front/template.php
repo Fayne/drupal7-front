@@ -409,38 +409,43 @@ function grassland_front_mobile_domain_switcher() {
 }
 
 function grassland_front_preprocess_search_results(&$variables) {
+    global $base_path;
+    drupal_add_library('system', 'ui.tabs');
+    drupal_add_js('jQuery(document).ready(function(){jQuery("#tabs").tabs();});', 'inline');
     $variables['search_results'] = '';
     // get a list of node types
     $nodeTypes = node_type_get_types();
     $filterNodeTypes = array('article', 'product', 'career');
-
     // loop through results, group by type
     $resultTypes = array();
-    foreach ($variables['results'] as $result)
-    {
+    foreach ($variables['results'] as $result) {
         if( in_array($result['node']->type, $filterNodeTypes) )
             $resultTypes[$result['node']->type][] = $result;
     }
+
     // create fieldsets for each type
-    foreach ($resultTypes as $resultType => $resultTypeResults)
-    {
+    $output = '<div id="tabs">';
+    $output .= '<ul>';
+    $i = 0;
+    foreach ($resultTypes as $resultType => $resultTypeResults) {
+        $i++;
+        $output .=  '<li><a href="#tabs-'.$i.'">';
+        $output .=  $nodeTypes[$resultType]->name.'</a></li>';
+    }
+    $output .= '</ul>';
+    $i = 0;
+    foreach ($resultTypes as $resultType => $resultTypeResults) {
+        $i++;
         $value = "";
         // loop through entries
-        foreach ($resultTypeResults as $result)
-        {
-            $value .= theme('search_result', $result);
+        foreach ($resultTypeResults as $result) {
+            $value .= theme('search_result', array('result' => $result, 'module' => $variables['module']));
         }
-        // add fieldset
-        $variables['search_results'] .= theme('fieldset',
-            array(
-                '#title' => $nodeTypes[$resultType]->name,
-                '#collapsible' => TRUE,
-                '#collapsed' => FALSE,
-                '#value' => $value,
-            )
-        );
+        $output .=  '<div id="tabs-'.$i.'">';
+        $output .=  $value;
+        $output .=  '</div>';
     }
-    $variables['pager'] = theme('pager', NULL, 10, 0);
-    // Provide alternate search results template.
-    $variables['template_files'][] = 'search-results-'. $variables['type'];
+    $output .= '</div>';
+
+    $variables['search_results'] = $output;
 }

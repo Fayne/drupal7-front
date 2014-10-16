@@ -11,7 +11,7 @@
 ?>
 <?php
 $rows = array_unique($rows);
-$uri = trim($_SERVER["REQUEST_URI"], '/');
+$uri = current_path();
 $uri_arr = explode('/', $uri);
 
 $is_active = !isset($uri_arr[1]) || $uri_arr[1] === 'all' ? true : false;
