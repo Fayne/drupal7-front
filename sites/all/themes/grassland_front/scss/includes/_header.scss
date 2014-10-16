@@ -3,8 +3,58 @@
 }
 
 header {
-  padding-top: $section-distance;
-  padding-bottom: $section-distance;
+  padding-top: $section-header-distance;
+  padding-bottom: $section-header-distance;
+  height: 90px;
+  .logo{
+    vertical-align: bottom;
+  }
+  .select-domain-list{
+    display: inline-block;
+    margin: 0 0 0 $section-distance / 2;
+    .cur-domain{
+      color: $main-color;
+    }
+    > li{
+      position: relative;
+      padding-right: $icon-distance;
+      background: url(../images/00_ws_header_dropdown_gl.png) no-repeat scroll right center transparent;
+      &:hover{
+        .other-domains{
+          display: block;
+        }
+      }
+    }
+    .other-domains{
+      display: none;
+      position: absolute;
+      margin-top: -27px;
+      padding-top: 54px;
+      right: 0;
+      z-index: 60;
+      li{
+        border: 1px solid $border-color;
+        border-top: none;
+        background-color: $third-bg-color;
+        white-space: nowrap;
+        line-height: 30px;
+        padding: $section-distance / 2 $icon-distance;
+        border-bottom: 1px solid $border-color;
+        &:last-child{
+          border-radius: 0 0 5px 5px;
+        }
+      }
+      a{
+        color: $nav-color;
+        &:hover,&:active,&:focus{
+          color: $main-color;
+        }
+      }
+    }
+  }
+  .header_right{
+    padding: 3px 0;
+  }
 }
 
 nav {
@@ -14,6 +64,9 @@ nav {
 
 .nav-tabs {
   border: none;
+  height: 55px;
+  font-size: 16px;
+  font-family: "Hei Regular";
   li {
     text-align: center;
     width: 20%;
@@ -21,6 +74,7 @@ nav {
       color: $nav-color;
       border-top: none;
       border-bottom: 3px solid transparent;
+      line-height: 32px;
       &:hover, &.active {
         border-radius: 0;
         border-top: none;
@@ -28,13 +82,16 @@ nav {
         color: $main-color;
         background: $nav-hover-bg-color;
       }
-      &:active {
-        border-radius: 0;
-        border-top: none;
-        border-bottom: 3px solid $main-color;
-        color: $main-color;
-        background: $nav-hover-bg-color;
+      &:focus{
+        background: transparent;
       }
+    }
+    &.active-trail a{
+      border-radius: 0;
+      border-top: none;
+      border-bottom: 3px solid $main-color;
+      color: $main-color;
+      background: $nav-hover-bg-color;
     }
   }
 }
@@ -83,6 +140,7 @@ nav {
 }
 .header-mobile{
   background: $header-bg-color;
+  margin-bottom: 0;
   .navbar-nav{
     margin-top: 0;
     margin-bottom: 0;

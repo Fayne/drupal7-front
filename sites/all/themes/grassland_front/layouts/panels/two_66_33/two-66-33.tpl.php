@@ -27,28 +27,23 @@ $panel_suffix = isset($panel_suffix) ? $panel_suffix : '';
 <?php print $panel_prefix; ?>
 <?php if ($content['two_66_33_top']): ?>
     <div class="row">
-        <div class="col-md-12 about-views-header">
+        <div class="col-md-12">
             <?php print $content['two_66_33_top']; ?>
         </div>
     </div>
 <?php endif; ?>
     <div class="row">
-        <div class="col-md-8 about-views-main region-two-66-33-first">
+        <div class="col-md-8 region-two-66-33-first">
             <?php print $content['two_66_33_first']; ?>
         </div>
-        <div class="col-md-4 office-view-list region-two-66-33-second">
+        <div class="col-md-4 region-two-66-33-second">
             <?php print $content['two_66_33_second']; ?>
         </div>
     </div>
-    <div class="row section-inner-bottom">
-        <div class="col-md-12 "></div>
-    </div>
 <?php if ($content['two_66_33_bottom']): ?>
     <div class="row region-two-66-33-bottom">
-        <div class="col-md-12 staff-views-list">
-            <div class="staff-list-container">
-                <?php print $content['two_66_33_bottom']; ?>
-            </div>
+        <div class="col-md-12">
+            <?php print $content['two_66_33_bottom']; ?>
         </div>
     </div>
 <?php endif; ?>

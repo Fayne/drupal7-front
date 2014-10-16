@@ -40,10 +40,10 @@ $panel_suffix = isset($panel_suffix) ? $panel_suffix : '';
     </div>
 <?php endif; ?>
     <div class="row">
-        <div class="col-md-6 panel-left">
+        <div class="col-sm-6 panel-left">
             <?php print $content['two_2x50_first']; ?>
         </div>
-        <div class="col-md-6 panel-right">
+        <div class="col-sm-6 panel-right">
             <?php print $content['two_2x50_second']; ?>
         </div>
     </div>

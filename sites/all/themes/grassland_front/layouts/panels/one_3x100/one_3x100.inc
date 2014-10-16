@@ -6,8 +6,8 @@
  */
 function grassland_front_one_3x100_panels_layouts() {
   $items['one_3x100'] = array(
-    'title' => t('Grassland About Layout'),
-    'category' => t('Grassland About Layout - 1 column'),
+    'title' => t('Grassland 3x100 Layout'),
+    'category' => t('Grassland Front Layout - 1 column'),
     'icon' => 'one_3x100.png',
     'theme' => 'one_3x100',
     'admin css' => 'one_3x100.admin.css',

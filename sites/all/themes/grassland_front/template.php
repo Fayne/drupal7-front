@@ -22,6 +22,11 @@ function grassland_front_preprocess_html(&$variables) {
 
 function grassland_front_preprocess_page(&$vars) {
 
+
+    // add jqueryui
+    drupal_add_library('system', 'ui');
+    drupal_add_library('system', 'ui.slider');
+
     // navigation
     $custom_main_menu = _custom_main_menu_render_superfish();
     if (!empty($custom_main_menu['content'])) {
@@ -40,6 +45,7 @@ function grassland_front_preprocess_page(&$vars) {
     $vars['seach_block_form'] = drupal_render($seach_block_form);
 
     // Domain Switcher
+    $vars['domain_switcher_default'] = grassland_front_default_domain_switcher();
     $vars['domain_switcher_mobile'] = grassland_front_mobile_domain_switcher();
 
 }
@@ -219,21 +225,6 @@ function grassland_front_table($variables) {
     return $output;
 }
 
-function grassland_front_breadcrumb($variables) {
-    $breadcrumb = $variables['breadcrumb'];
-    $output = '';
-    if (count($breadcrumb) == 1) {
-
-    }
-    if (!empty($breadcrumb)) {
-        // Provide a navigational heading to give context for breadcrumb links to
-        // screen-reader users. Make the heading invisible with .element-invisible.
-
-        $output = implode('', $breadcrumb);
-        return $output;
-    }
-}
-
 function grassland_front_status_messages(&$variables) {
     $display = $variables['display'];
     $output = '';
@@ -305,14 +296,14 @@ function grassland_front_preprocess_node(&$variables) {
         $variables['display_submitted'] = TRUE;
         //$variables['submitted'] = t('Submitted by !username on !datetime', array('!username' => $variables['name'], '!datetime' => $variables['date']));
         $submitted = '<p class="post_meta">';
-        $submitted .= '<span class="calendar">' . format_date($node->created, 'custom', 'd M, Y') . '</span>';
-        $submitted .= '<span class="author">by ' . $variables['name'] . '</span>';
-        if (!empty($node->comment_count)) {
+        $submitted .= '<span class="calendar">' . format_date($node->created, 'custom', 'Y年m月') . '</span>';
+        $submitted .= '<span class="author"> / ' . $variables['name'] . '</span>';
+        if (!empty($node->comment_count) && false) {
             $submitted .= '<span class="comments"><a href="' . url('node/' . $node->nid) . '#comments"> ' . $node->comment_count . ' ' . t('Comments') . '</a></span>';
         }
 
         $tags = grassland_front_format_comma_field('field_tags', $node);
-        if (!empty($tags)) {
+        if (!empty($tags) && false) {
             $submitted .= '<span class="tags">' . $tags . '</span>';
         }
         $submitted .= '</p>';
@@ -376,6 +367,27 @@ function grassland_front_tagadelic_weighted(array $vars) {
     return $output;
 }
 
+function grassland_front_default_domain_switcher(){
+    $domains        = domain_domains(true);
+    $cur_domain     = domain_get_domain();
+    $cur_domain_id  = $cur_domain['domain_id'];
+
+    unset($domains[$cur_domain_id]);
+    $output         = '<ul class="select-domain-list"><li><span class="cur-domain">'.$cur_domain['sitename'].'</span><ul class="other-domains">';
+
+    foreach($domains as $domain){
+        if( $domain['valid'])
+            $output .= '<li>
+                            <a href="'.$domain['path'].'home">
+                                '.$domain['sitename'].'
+                            </a>
+                        </li>';
+    }
+    $output .= '</ul></li></ul>';
+
+    return $output;
+}
+
 function grassland_front_mobile_domain_switcher() {
     $domains        = domain_domains(true);
     $cur_domain     = domain_get_domain();
@@ -386,7 +398,7 @@ function grassland_front_mobile_domain_switcher() {
         if( $domain['valid'])
             $output .= '<li class="domain-block '.( $cur_domain_id === $domain['domain_id'] ? ' active' : '').'">
                             <div>
-                                <a href="'.$domain['path'].'">
+                                <a href="'.$domain['path'].'home">
                                     <span class="glyphicon glyphicon-map-marker"></span>'.$domain['sitename'].'
                                 </a>
                             </div>
@@ -394,4 +406,41 @@ function grassland_front_mobile_domain_switcher() {
     }
 
     return $output;
+}
+
+function grassland_front_preprocess_search_results(&$variables) {
+    $variables['search_results'] = '';
+    // get a list of node types
+    $nodeTypes = node_type_get_types();
+    $filterNodeTypes = array('article', 'product', 'career');
+
+    // loop through results, group by type
+    $resultTypes = array();
+    foreach ($variables['results'] as $result)
+    {
+        if( in_array($result['node']->type, $filterNodeTypes) )
+            $resultTypes[$result['node']->type][] = $result;
+    }
+    // create fieldsets for each type
+    foreach ($resultTypes as $resultType => $resultTypeResults)
+    {
+        $value = "";
+        // loop through entries
+        foreach ($resultTypeResults as $result)
+        {
+            $value .= theme('search_result', $result);
+        }
+        // add fieldset
+        $variables['search_results'] .= theme('fieldset',
+            array(
+                '#title' => $nodeTypes[$resultType]->name,
+                '#collapsible' => TRUE,
+                '#collapsed' => FALSE,
+                '#value' => $value,
+            )
+        );
+    }
+    $variables['pager'] = theme('pager', NULL, 10, 0);
+    // Provide alternate search results template.
+    $variables['template_files'][] = 'search-results-'. $variables['type'];
 }

@@ -6,8 +6,8 @@
  */
 function grassland_front_two_66_33_panels_layouts() {
   $items['two_66_33'] = array(
-    'title' => t('Grassland About Layout'),
-    'category' => t('Grassland About Layout - 2 column'),
+    'title' => t('Grassland 66-33 Layout'),
+    'category' => t('Grassland Front Layout - 2 column'),
     'icon' => 'two_66_33.png',
     'theme' => 'two_66_33',
     'admin css' => 'two_66_33.admin.css',

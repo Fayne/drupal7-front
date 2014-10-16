@@ -4,6 +4,7 @@ $main-color-hover : #2faf3f;
 $font-color: #848484;
 $second-font-color: #c0c0c0;
 $third-font-color: #b0b0b0;
+$fourth-font-color: #b2b2b2;
 $font-header-color: #c2c2c2;
 $reverse-color: #ffffff;
 $footer-bg-color: #333333;
@@ -12,17 +13,24 @@ $footer-highlight-color: #dddddd;
 $main-bg-color: #f7f7f7;
 $header-bg-color: #ffffff;
 $border-color: #e6e6e6;
+$circle-border-color: #e0e0e0;
 $nav-color: #7f7f7f;
 $nav-hover-bg-color: #fcfcfc;
+$caption-bg-color: rgba(127, 127, 127, 0.5);
 $second-bg-color: #ffffff;
 $third-bg-color: #fcfcfc;
 $fourth-bg-color: #e6e6e6;
 
 // define section padding
 $section-distance: 20px;
+$section-header-distance: 25px;
+$header-footer-distance: 40px;
 $bootstrap-distance: 15px;
 $icon-distance: 30px;
 
+html{
+  height: 100%;
+}
 body{
   color: $font-color;
   background: $main-bg-color;
@@ -38,27 +46,31 @@ a{
     outline: none;
   }
 }
-h1, .h1, h2, .h2, h3, .h3{
-  margin: 0;
+h1,h2,h3{
+  padding-bottom: 15px;
+  border-bottom: 1px solid $border-color;
+  color: $main-color;
+}
+h4,h5,h6{
+  padding-bottom: 10px;
+  color: $main-color;
 }
 .panel-pane{
-  padding: $section-distance 0;
+  padding-bottom: $section-distance;
   background: $second-bg-color;
   border: 1px solid $border-color;
-  margin-bottom: $section-distance;
 }
 .header_contacts{
   background: $main-color;
-  font-weight: bold;
   color: $reverse-color;
-  font-size: 15px;
+  font-size: 18px;
   margin-left: 20px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 0 10px;
   height: 34px;
   line-height: 32px;
-  width: 223px;
+  width: 245px;
   a{
     color: $reverse-color;
     &:hover{
@@ -108,7 +120,9 @@ h1, .h1, h2, .h2, h3, .h3{
 }
 .gl-title{
   color: $main-color;
-  font-size: 18px;
+  font-size: 20px;
+  margin-bottom: $section-distance / 2;
+  margin-top: $section-distance / 2;
 }
 .gl-title-lg{
   font-size: 22px;
@@ -142,8 +156,19 @@ h1, .h1, h2, .h2, h3, .h3{
   display: inline-block;
   width: 50%;
 }
+.lable-left{
+  float: left;
+  text-align: left;
+}
+.detail-right{
+  float: right;
+  text-align: right;
+}
 .main-content{
-  margin: $section-distance 0;
+  margin: $header-footer-distance 0;
+}
+.no-border{
+  border: none !important;
 }
 .page-node{
   .main-content{
@@ -158,4 +183,9 @@ h1, .h1, h2, .h2, h3, .h3{
 // fixed full image width just display 99% issue(overwrite drupal default css)
 .panels-flexible-region-first.panels-flexible-region-last{
   width: 100%;
+}
+
+// media query
+@media only screen and (max-width : 750px) {
+  .nivo-caption,.about-header-caption{ font-size: 10px; }
 }
