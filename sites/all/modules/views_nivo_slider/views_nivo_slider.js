@@ -14,7 +14,8 @@
                         hmax = (vns.data('hmax') > $(this).height()) ? vns.data('hmax') : $(this).height();
                         wmax = (vns.data('wmax') > $(this).width()) ? vns.data('wmax') : $(this).width();
 
-                        vns.width(wmax).height(hmax).data('hmax', hmax).data('wmax', wmax);
+                        // vns.width(wmax).height(hmax).data('hmax', hmax).data('wmax', wmax); /* fixed responsive issue */
+                        vns.data('hmax', hmax).data('wmax', wmax);
                     });
                 });
 
