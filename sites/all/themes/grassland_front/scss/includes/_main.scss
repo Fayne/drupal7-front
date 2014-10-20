@@ -642,3 +642,59 @@
   }
 }
 /** end career detail */
+
+/** search */
+.search-body .region-content{
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  .panel-pane{
+    border: none;
+  }
+  .search-summary-pane{
+    h3{
+      margin-bottom: 0;
+    }
+  }
+  .search-result-pane{
+    min-height: 300px;
+    border-right: 1px solid $border-color;
+    margin: 0 $section-distance $section-distance;
+    padding: 0 $section-distance 0 0;
+    .search-result-title{
+      margin-bottom: $section-distance;
+      > div{
+        padding-left: $section-distance;
+      }
+    }
+    .view-content{
+      .row{
+        line-height: 2.2em;
+        > div{
+          padding-left: $section-distance;
+        }
+        .nowrap{
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    .views-row-odd{
+      background-color: $main-bg-color;
+    }
+  }
+  .search-type-pane{
+    .search-type-title{
+      margin-bottom: $section-distance;
+    }
+    a{
+      color: $font-color;
+      &:hover{
+        text-decoration: underline;
+      }
+      &.active{
+        color: $main-color;
+      }
+    }
+  }
+}
+/** end search */

@@ -4,7 +4,7 @@
         <div class="row">
             <?php if ($logo): ?>
                 <div class="col-md-6 header_left">
-                    <a href="<?php print $front_page; ?>"><img class="logo" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/></a>
+                    <a href="/home"><img class="logo" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/></a>
                     <?php print $domain_switcher_default; ?>
                 </div>
             <?php endif; ?>
@@ -48,7 +48,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand"
-               href="#"><?php echo $logo ? "<img src=\"{$logo}\" alt=\"" . t("Home") . "\"/>" : $site_name ?></a>
+               href="/home"><?php echo $logo ? "<img src=\"{$logo}\" alt=\"" . t("Home") . "\"/>" : $site_name ?></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

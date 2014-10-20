@@ -23,7 +23,7 @@
  */
 ?>
 <?php
-$uri = trim($_SERVER["REQUEST_URI"], '/');
+$uri = current_path();
 $uri_arr = explode('/', $uri);
 $new_uri_arr = explode('|', $output);
 $new_uri = current($new_uri_arr);
