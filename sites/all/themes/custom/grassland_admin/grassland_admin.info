@@ -30,6 +30,7 @@ stylesheets[all][] = assets/font-awesome/css/font-awesome.css
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/style-responsive.css
 stylesheets[all][] = css/grassland_admin.css
+stylesheets[all][] = css/custom.css
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Scripts

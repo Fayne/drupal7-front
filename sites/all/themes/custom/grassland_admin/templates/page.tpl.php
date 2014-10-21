@@ -33,7 +33,9 @@
     <!--header end-->
     <!--sidebar start-->
     <aside>
-        <?php print render($page['sidebar_left']); ?>
+        <div id="sidebar" class="nav-collapse " tabindex="5000">
+        <?php print $navigation; ?>
+        </div>
     </aside>
     <!--sidebar end-->
     <!--main content start-->

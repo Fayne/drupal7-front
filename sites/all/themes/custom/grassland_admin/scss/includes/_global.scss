@@ -1,0 +1,49 @@
+// views table
+.views-table {
+  border-radius: $border-radius;
+  .views-field-views-bulk-operations, .views-field-edit-node{
+    text-align: center;
+  }
+  .views-field{
+    vertical-align: middle;
+    input[type="radio"], input[type="checkbox"] {
+      margin: 0;
+    }
+  }
+  .even td{
+    background-color: white;
+  }
+  .views-row-last{
+    border-bottom: none;
+  }
+}
+
+// edit panel
+.node-form {
+  .form-text, .form-select{
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #e2e2e4;
+    border-radius: 4px;
+    box-shadow: none;
+    color: black;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    vertical-align: middle;
+    width: 100%;
+  }
+  .image-widget-data .description{
+    white-space: nowrap;
+  }
+  #edit-domains{
+    display: inline-block;
+  }
+  #edit-actions{
+    padding: 0;
+
+  }
+}

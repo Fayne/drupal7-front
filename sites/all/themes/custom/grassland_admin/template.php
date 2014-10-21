@@ -1,4 +1,7 @@
 <?php
+
+include_once 'includes/custom_menu.inc';
+
 /**
  * @file
  * template.php
@@ -7,21 +10,13 @@
 /**
  * Process variables for page.tpl.php
  */
-function grassland_admin_process_page(&$vars) {
-
-//    echo "<pre>";
-//    print_r($vars);
-//    echo "</pre>";
-//    exit;
-    // Build a variable for the main menu
-//    if (isset($vars['tabs'])) {
-//        $vars['tabs'] = theme('links', array(
-//            'links' => $vars['tabs'],
-//            'attributes' => array(
-//                'class' => array('nav', 'nav-tabs', 'nav-justified' ),
-//            ),
-//        ));
-//    }
+function grassland_admin_process_page(&$vars)
+{
+    // custom left menu(argument is the machine name of menu)
+    $custom_main_menu = _custom_menu_render_superfish('menu-left-menu');
+    if (!empty($custom_main_menu['content'])) {
+        $vars['navigation'] = $custom_main_menu['content'];
+    }
 }
 
 /**
@@ -35,7 +30,8 @@ function grassland_admin_process_page(&$vars) {
  * @ingroup themeable
  * @see menu_local_tasks()
  */
-function grassland_admin_menu_local_tasks(&$variables) {
+function grassland_admin_menu_local_tasks(&$variables)
+{
     $output = '';
 
     if (!empty($variables['primary'])) {

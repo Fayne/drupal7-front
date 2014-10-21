@@ -169,6 +169,7 @@ a, a:hover, a:focus {
     height: 100%;
     position: fixed;
     background: #2a3542;
+    z-index: 2;
 }
 
 #sidebar ul li {
