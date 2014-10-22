@@ -417,6 +417,9 @@
     padding-top: 0;
     border: none;
   }
+  .main-content{
+    padding-bottom: $section-distance;
+  }
   .product-detail-main{
     h3{
       color: $main-color;
@@ -698,3 +701,68 @@
   }
 }
 /** end search */
+
+/** prospect */
+#lightbox {
+  #outerImageContainer{
+    border-radius: 5px;
+  }
+  #imageDataContainer{
+    display: none;
+    height: 0;
+    overflow: hidden;
+  }
+}
+.page-node-lightbox,.lightbox-processed{
+  .prospect-content{
+    border: none;
+    background-color: transparent;
+    h3{
+      border: none;
+    }
+    .white-bg{
+      background-color: white;
+    }
+    .or{
+      background-color: $border-color;
+      height: 1px;
+      margin: 20px 0;
+      span{
+        display: inline-block;
+        line-height: $section-distance;
+        margin-top: -$section-distance;
+        padding: 0 $section-distance;
+        vertical-align: middle;
+        background-color: white;
+      }
+    }
+    form{
+      > div{
+        text-align: center;
+      }
+      .form-item{
+        padding: 0 $section-distance $section-distance / 2;
+        background-color: white;
+        label{
+          float: left;
+          .form-required{
+            color: red;
+          }
+        }
+        input{
+          clear: left;
+        }
+      }
+      .webform-component--qq-id{
+        padding-bottom: $section-distance * 2;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: $section-distance;
+      }
+    }
+    button{
+      background-color: $main-color;
+      width: 76%;
+    }
+  }
+}
+/** end prospect */

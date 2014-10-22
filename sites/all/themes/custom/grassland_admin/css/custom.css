@@ -1,3 +1,22 @@
+table {
+  width: 100%; }
+  table th, table td {
+    padding: 8px 10px;
+    border: none; }
+  table th.radio, table th.checkbox,
+  table td.radio, table td.checkbox {
+    display: table-cell; }
+    table th.radio input[type="radio"], table th.radio input[type="checkbox"], table th.checkbox input[type="radio"], table th.checkbox input[type="checkbox"],
+    table td.radio input[type="radio"],
+    table td.radio input[type="checkbox"], table td.checkbox input[type="radio"], table td.checkbox input[type="checkbox"] {
+      position: inherit;
+      margin: 0; }
+
+.sticky-header {
+  z-index: 999;
+  min-height: 58px;
+  display: block; }
+
 .views-table {
   border-radius: 4px; }
   .views-table .views-field-views-bulk-operations, .views-table .views-field-edit-node {
@@ -11,6 +30,21 @@
   .views-table .views-row-last {
     border-bottom: none; }
 
+.node-form textarea {
+  color: black; }
+.node-form div.form-item-title {
+  padding-left: 165px; }
+.node-form div.form-wrapper {
+  padding-left: 165px; }
+  .node-form div.form-wrapper .form-type-checkboxes {
+    padding-left: 0; }
+    .node-form div.form-wrapper .form-type-checkboxes .form-checkboxes {
+      padding-left: 165px;
+      display: inline-block; }
+.node-form .form-type-checkboxes.form-item-domains {
+  padding-left: 165px; }
+  .node-form .form-type-checkboxes.form-item-domains .form-type-checkbox {
+    padding-left: 165px; }
 .node-form .form-text, .node-form .form-select {
   background-color: #ffffff;
   background-image: none;
@@ -26,12 +60,22 @@
   transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
   vertical-align: middle;
   width: 100%; }
+.node-form .image-widget-data .form-item {
+  margin-top: 20px; }
 .node-form .image-widget-data .description {
   white-space: nowrap; }
 .node-form #edit-domains {
   display: inline-block; }
 .node-form #edit-actions {
   padding: 0; }
+.node-form input[type="file"] {
+  display: inline-block; }
+
+.btn-primary {
+  margin-right: 20px; }
+
+.btn-warning {
+  margin-right: 20px; }
 
 footer.site-footer {
   position: fixed;

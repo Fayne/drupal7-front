@@ -660,6 +660,8 @@ nav {
 .node-type-product .panel-pane {
   padding-top: 0;
   border: none; }
+.node-type-product .main-content {
+  padding-bottom: 20px; }
 .node-type-product .product-detail-main h3 {
   color: #1a9a3b;
   margin: 20px; }
@@ -864,6 +866,52 @@ nav {
       color: #1a9a3b; }
 
 /** end search */
+/** prospect */
+#lightbox #outerImageContainer {
+  border-radius: 5px; }
+#lightbox #imageDataContainer {
+  display: none;
+  height: 0;
+  overflow: hidden; }
+
+.page-node-lightbox .prospect-content, .lightbox-processed .prospect-content {
+  border: none;
+  background-color: transparent; }
+  .page-node-lightbox .prospect-content h3, .lightbox-processed .prospect-content h3 {
+    border: none; }
+  .page-node-lightbox .prospect-content .white-bg, .lightbox-processed .prospect-content .white-bg {
+    background-color: white; }
+  .page-node-lightbox .prospect-content .or, .lightbox-processed .prospect-content .or {
+    background-color: #e6e6e6;
+    height: 1px;
+    margin: 20px 0; }
+    .page-node-lightbox .prospect-content .or span, .lightbox-processed .prospect-content .or span {
+      display: inline-block;
+      line-height: 20px;
+      margin-top: -20px;
+      padding: 0 20px;
+      vertical-align: middle;
+      background-color: white; }
+  .page-node-lightbox .prospect-content form > div, .lightbox-processed .prospect-content form > div {
+    text-align: center; }
+  .page-node-lightbox .prospect-content form .form-item, .lightbox-processed .prospect-content form .form-item {
+    padding: 0 20px 10px;
+    background-color: white; }
+    .page-node-lightbox .prospect-content form .form-item label, .lightbox-processed .prospect-content form .form-item label {
+      float: left; }
+      .page-node-lightbox .prospect-content form .form-item label .form-required, .lightbox-processed .prospect-content form .form-item label .form-required {
+        color: red; }
+    .page-node-lightbox .prospect-content form .form-item input, .lightbox-processed .prospect-content form .form-item input {
+      clear: left; }
+  .page-node-lightbox .prospect-content form .webform-component--qq-id, .lightbox-processed .prospect-content form .webform-component--qq-id {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 20px; }
+  .page-node-lightbox .prospect-content button, .lightbox-processed .prospect-content button {
+    background-color: #1a9a3b;
+    width: 76%; }
+
+/** end prospect */
 footer {
   background: #333333;
   color: #9b9b9b;

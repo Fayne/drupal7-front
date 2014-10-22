@@ -427,8 +427,8 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     /* Safari and Chrome */
     .dropdown-menu.extended  {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.176) !important;
-    };
     }
+}
 
 .dropdown-menu.extended li p {
     background-color: #F1F2F7;
@@ -1390,9 +1390,8 @@ h3.timeline-title {
     /* Safari and Chrome */
     .panel-footer.revenue-foot {
         margin-bottom: -4px;
-    };
     }
-
+}
 
 .panel-footer.revenue-foot ul  {
     margin: 0;
@@ -3226,7 +3225,7 @@ table.sliders tr td {
 }
 .has-switch span {
     cursor: pointer;
-    font-size: 14.994px;
+    font-size: 15px;
     font-weight: 700;
     float: left;
     height: 29px;

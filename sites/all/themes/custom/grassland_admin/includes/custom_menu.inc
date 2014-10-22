@@ -161,7 +161,7 @@ function _custom_menu_superfish_build($variables)
         $mlid = $menu_item['link']['mlid'];
 
         if (!isset($menu_item['link']['hidden']) || $menu_item['link']['hidden'] == 0) {
-            $item_class[] = ($trail && in_array($mlid, $trail)) ? 'active-trail' : '';
+            $item_class[] = ($trail && in_array($mlid, $trail)) ? 'active-trail active' : '';
 
             // Add helper classes to the menu items and hyperlinks.
             $settings['firstlast'] = ($settings['dfirstlast'] == 1 && $total_children == 1) ? 0 : $settings['firstlast'];
@@ -170,6 +170,7 @@ function _custom_menu_superfish_build($variables)
             $item_class[] = ($settings['zebra'] == 1) ? (($i % 2) ? 'odd' : 'even') : '';
             $item_class[] = ($settings['itemcount'] == 1) ? 'sf-item-' . $i : '';
             $item_class[] = ($settings['itemdepth'] == 1) ? 'sf-depth-' . $menu_item['link']['depth'] : '';
+            $link_class[] = ($trail && in_array($mlid, $trail)) ? 'active-trail active' : '';
             $link_class[] = ($settings['itemdepth'] == 1) ? 'sf-depth-' . $menu_item['link']['depth'] : '';
             $item_class[] = ($settings['liclass']) ? $settings['liclass'] : '';
             if (strpos($settings['hlclass'], ' ')) {
@@ -268,7 +269,7 @@ function _custom_menu_superfish_build($variables)
                     }
                     // More helper classes.
                     $item_class[] = ($megamenu_column) ? 'sf-megamenu-column' : '';
-                    $item_class[] = $link_class[] = 'grassland-admin-menu parent menuparent has-dropdown';
+                    $item_class[] = $link_class[] = 'grassland-admin-menu parent menuparent has-dropdown sub-menu dcjq-parent-li';
                 }
                 $parent_children++;
             } else {
@@ -300,7 +301,7 @@ function _custom_menu_superfish_build($variables)
             $output['content'] .= isset($whl[1]) ? $whl[1] : '';
             $output['content'] .= ($megamenu_wrapper) ? '<ul class="sf-megamenu"><li class="sf-megamenu-wrapper ' . $item_class . '">' : '';
             $output['content'] .= ($show_children) ? (isset($wul[0]) ? $wul[0] : '') : '';
-            $output['content'] .= ($show_children) ? (($megamenu_content) ? '<ol>' : '<ul class="dropdown">') : '';
+            $output['content'] .= ($show_children) ? (($megamenu_content) ? '<ol>' : '<ul class="dropdown sub">') : '';
             $output['content'] .= ($show_children) ? $children['content'] : '';
             $output['content'] .= ($show_children) ? (($megamenu_content) ? '</ol>' : '</ul>') : '';
             $output['content'] .= ($show_children) ? (isset($wul[1]) ? $wul[1] : '') : '';

@@ -22,6 +22,10 @@ function grassland_front_preprocess_html(&$variables) {
 
 function grassland_front_preprocess_page(&$vars) {
 
+    // overlay
+    if (isset($vars['node']->type) && isset($vars['node']->title) && $vars['node']->type == 'webform' && $vars['node']->title == 'Prospect') {
+        $vars['theme_hook_suggestions'][] = 'page__prospect';
+    }
 
     // add jqueryui
     drupal_add_library('system', 'ui');
@@ -47,7 +51,6 @@ function grassland_front_preprocess_page(&$vars) {
     // Domain Switcher
     $vars['domain_switcher_default'] = grassland_front_default_domain_switcher();
     $vars['domain_switcher_mobile'] = grassland_front_mobile_domain_switcher();
-
 }
 
 function grassland_front_format_comma_field($field_category, $node, $limit = NULL) {
@@ -265,6 +268,11 @@ function grassland_front_status_messages(&$variables) {
 }
 
 function grassland_front_preprocess_node(&$variables) {
+    // overlay
+    if (isset($variables['type']) && isset($variables['title']) && $variables['type'] == 'webform' && $variables['title'] == 'Prospect') {
+        $variables['theme_hook_suggestions'][] = 'node__prospect';
+    }
+
     $variables['view_mode'] = $variables['elements']['#view_mode'];
     // Provide a distinct $teaser boolean.
     $variables['teaser'] = $variables['view_mode'] == 'teaser';

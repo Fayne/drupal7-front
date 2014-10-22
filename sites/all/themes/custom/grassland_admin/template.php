@@ -45,9 +45,50 @@ function grassland_admin_menu_local_tasks(&$variables)
 }
 
 /**
- * Implements theme_menu_tree().
+ * Overwrite theme_button()
+ * @file template.php
+ * !replace my_theme with the name of your active theme
  */
-//function grassland_admin_menu_tree($variables) {
-//    return '<ul id="nav-accordion" class="sidebar-menu">' . $variables['tree'] . '</ul>';
-//}
+function grassland_admin_button($element)
+{
+    // Add some extra conditions to make sure we're only adding
+    // the classto the right submit button
+    $primary_buttons = array(
+        'edit-submit',
+        'edit-field-image-und-0-upload-button',
+    );
+    $warning_buttons = array(
+        'edit-preview',
+        'edit-cancel',
+    );
+    $danger_buttons = array(
+        'edit-delete',
+        'edit-field-image-und-0-remove-button',
+        'edit-field-career-upload-und-0-remove-button',
+    );
+    $primary_buttons_names = array(
+        'field_image_und_0_upload_button',
+        'field_career_upload_und_0_upload_button',
+        'op',
+    );
+
+    if (in_array($element['element']['#id'], $primary_buttons)) {
+        // Now add our custom class
+        $element['element']['#attributes']['class'] = array('btn btn-primary');
+    }
+    else if (in_array($element['element']['#id'], $warning_buttons)) {
+        // Now add our custom class
+        $element['element']['#attributes']['class'] = array('btn btn-warning');
+    }
+    else if (in_array($element['element']['#id'], $danger_buttons)) {
+        // Now add our custom class
+        $element['element']['#attributes']['class'] = array('btn btn-danger');
+    }
+    else if (in_array($element['element']['#name'], $primary_buttons_names)){
+        // Now add our custom class(upload button will reload)
+        $element['element']['#attributes']['class'] = array('btn btn-primary');
+    }
+
+    return theme_button($element);
+}
 

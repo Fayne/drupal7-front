@@ -26,9 +26,6 @@
     clear: left;
     /*overflow: hidden;*/
 }
-.node-form div.form-wrapper, .node-form div.form-item-title, .node-form .field-type-datetime-form fieldset, .node-form div.form-type-checkboxes, .node-form div.form-type-checkbox {
-    padding-left: 165px;
-}
 .node-form .field-type-number-integer, .node-form .field-type-number-float{
     float: left;
     width: 50%;
