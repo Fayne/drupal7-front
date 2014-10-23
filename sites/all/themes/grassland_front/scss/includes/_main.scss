@@ -20,13 +20,14 @@
       border: 1px solid white;
       border-radius: 10px;
       margin: 20% 20px 10%;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(255, 255, 255, 0.55);
       .top-row{
         padding: $section-distance 0;
       }
       .middle-row{
         border-top: 1px solid white;
         box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.65);
         > div{
           padding: $section-distance;
           img{
@@ -684,6 +685,11 @@
     .views-row-odd{
       background-color: $main-bg-color;
     }
+    .view-empty{
+      h3{
+        border-bottom: none;
+      }
+    }
   }
   .search-type-pane{
     .search-type-title{
@@ -703,65 +709,82 @@
 /** end search */
 
 /** prospect */
-#lightbox {
-  #outerImageContainer{
-    border-radius: 5px;
-  }
-  #imageDataContainer{
-    display: none;
-    height: 0;
-    overflow: hidden;
-  }
-}
-.page-node-lightbox,.lightbox-processed{
-  .prospect-content{
-    border: none;
-    background-color: transparent;
-    h3{
-      border: none;
+body.overlay {
+  #overlay{
+    margin-top: 4.5%;
+    #overlay-titlebar{
+      display: none;
     }
-    .white-bg{
-      background-color: white;
-    }
-    .or{
-      background-color: $border-color;
-      height: 1px;
-      margin: 20px 0;
-      span{
-        display: inline-block;
-        line-height: $section-distance;
-        margin-top: -$section-distance;
-        padding: 0 $section-distance;
-        vertical-align: middle;
-        background-color: white;
-      }
-    }
-    form{
-      > div{
-        text-align: center;
-      }
-      .form-item{
-        padding: 0 $section-distance $section-distance / 2;
-        background-color: white;
-        label{
-          float: left;
-          .form-required{
-            color: red;
+    #overlay-content{
+      border-radius: 5px;
+      padding: 0;
+      color: $font-color;
+      .prospect-content,.overlay-content{
+        border: none;
+        background-color: transparent;
+        margin: 0;
+        .button-box{
+          border-top: 1px solid $border-color;
+          background-color: $third-bg-color;
+          margin-top: $section-distance;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          #overlay-close{
+            background: $main-color;
+            border-radius: 5px;
+            display: block;
+            height: auto;
+            margin: $section-distance 0;
+            padding: $section-distance / 2;
+            position: inherit;
+            width: auto;
           }
         }
-        input{
-          clear: left;
+        h3{
+          border: none;
+        }
+        .or{
+          background-color: $border-color;
+          height: 1px;
+          margin: 20px 0;
+          span{
+            display: inline-block;
+            line-height: $section-distance;
+            margin-top: -$section-distance;
+            padding: 0 $section-distance;
+            vertical-align: middle;
+            background-color: white;
+          }
+        }
+        form{
+          > div{
+            text-align: center;
+          }
+          .form-item{
+            padding: 0 $section-distance $section-distance / 2;
+            background-color: white;
+            label{
+              float: left;
+              .form-required{
+                color: red;
+              }
+            }
+            input{
+              clear: left;
+            }
+          }
+          .webform-component--qq-id{
+            padding-bottom: $section-distance * 2;
+            border-bottom: 1px solid $border-color;
+            margin-bottom: $section-distance;
+          }
+        }
+        button{
+          background-color: $main-color;
+          width: 76%;
+          margin-bottom: $section-distance;
         }
       }
-      .webform-component--qq-id{
-        padding-bottom: $section-distance * 2;
-        border-bottom: 1px solid $border-color;
-        margin-bottom: $section-distance;
-      }
-    }
-    button{
-      background-color: $main-color;
-      width: 76%;
     }
   }
 }

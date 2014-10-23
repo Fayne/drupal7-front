@@ -5,7 +5,7 @@
             <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
         </div>
         <?php if ($logo || $site_name || $site_slogan): ?>
-            <a href="index.html" class="logo" >
+            <a href="/home" class="logo" >
                 <?php print $logo ? "<img src=\"{$logo}\" />" : ""; ?>&nbsp;<?php print $site_name ? $site_name : ""; ?>&nbsp;&gt;&nbsp;<?php print $site_slogan ? $site_slogan : ""; ?>
             </a>
         <?php endif; ?>

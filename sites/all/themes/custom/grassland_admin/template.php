@@ -56,6 +56,8 @@ function grassland_admin_button($element)
     $primary_buttons = array(
         'edit-submit',
         'edit-field-image-und-0-upload-button',
+        'edit-field-product-thumb-und-0-upload-button',
+        'edit-field-product-thumb-und-0-remove-button',
     );
     $warning_buttons = array(
         'edit-preview',
@@ -69,6 +71,7 @@ function grassland_admin_button($element)
     $primary_buttons_names = array(
         'field_image_und_0_upload_button',
         'field_career_upload_und_0_upload_button',
+        'field_product_thumb_und_0_upload_button',
         'op',
     );
 
@@ -92,3 +95,43 @@ function grassland_admin_button($element)
     return theme_button($element);
 }
 
+//function grassland_admin_node_create ($node) {
+//    // redirect node list(machine name)
+//    $redirect_nodes = array(
+//        'slider',
+//        'about',
+//        'product',
+//        'article',
+//        'career',
+//        'faqs',
+//        'office',
+//        'staff',
+//    );
+//
+//    if (in_array($node->type, $redirect_nodes)) {
+//        drupal_goto('/admin/content/' . $node->type);
+//    }
+//}
+
+function grassland_admin_form_alter (&$form, &$form_state, $form_id) {
+    // redirect node list
+    $redirect_nodes = array(
+        'slider_node_form',
+        'about_node_form',
+        'product_node_form',
+        'article_node_form',
+        'career_node_form',
+        'faqs_node_form',
+        'office_node_form',
+        'staff_node_form',
+    );
+
+    if (in_array($form_id, $redirect_nodes)) {
+        $form['actions']['submit']['#submit'][] = '_grassland_redirect_submit';
+    }
+}
+
+function _grassland_redirect_submit($form, &$form_state) {
+    $node = node_form_submit_build_node($form, $form_state);
+    $form_state['redirect'] = 'admin/content/' . $node->type;
+}

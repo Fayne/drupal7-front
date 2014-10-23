@@ -84,35 +84,9 @@
 $contact_phone = theme_get_setting('contact_phone', 'grassland_front');
 ?>
 <div id="node-<?php print $node->nid; ?>"
-     class="<?php print $classes; ?> node-prospect clearfix"<?php print $attributes; ?>>
-
-    <?php print $user_picture; ?>
-
-    <?php print render($title_prefix); ?>
-    <?php if (!$page): ?>
-        <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-    <?php endif; ?>
-    <?php print render($title_suffix); ?>
-
-    <?php if ($display_submitted): ?>
-        <div class="submitted">
-            <?php print $submitted; ?>
-        </div>
-    <?php endif; ?>
+     class="<?php print $classes; ?> node-overlay clearfix"<?php print $attributes; ?>>
 
     <div class="content"<?php print $content_attributes; ?>>
-        <div class="row section-inner-left section-inner-right ">
-            <div class="col-md-12"><h3>上门服务</h3></div>
-            <div class="col-md-12">提交您的联系方式，我们的工作人员会第一时间与您联系</div>
-            <div class="col-md-12"><h3><span
-                        class="glyphicon glyphicon-earphone"></span>&nbsp;<?php print $contact_phone; ?></h3></div>
-        </div>
-        <div class="row  ">
-            <div class="col-md-12 text-center or"><span>或者</span></div>
-        </div>
-        <div class="row section-inner-left section-inner-right ">
-            <div class="col-md-12"><h3>让我们联系您</h3></div>
-        </div>
         <div class="row">
             <div class="col-md-12">
                 <?php

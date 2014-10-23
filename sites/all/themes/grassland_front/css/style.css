@@ -272,9 +272,13 @@ nav {
     .header-mobile .navbar-nav li {
       padding: 10px 15px;
       border-bottom: 1px solid #e6e6e6; }
-      .header-mobile .navbar-nav li:hover {
+      .header-mobile .navbar-nav li a {
+        color: #808080; }
+        .header-mobile .navbar-nav li a:hover, .header-mobile .navbar-nav li a:focus {
+          background-color: transparent; }
+      .header-mobile .navbar-nav li:hover, .header-mobile .navbar-nav li.active-trail {
         background: #fcfcfc; }
-        .header-mobile .navbar-nav li:hover a {
+        .header-mobile .navbar-nav li:hover a, .header-mobile .navbar-nav li.active-trail a {
           color: #1a9a3b; }
       .header-mobile .navbar-nav li a {
         padding-left: 0; }
@@ -308,12 +312,14 @@ nav {
     .header-mobile .header_contacts a:hover {
       color: white !important; }
   .header-mobile .navbar-nav .contact-block {
-    background: #f7f7f7; }
+    background: #ffffff; }
+    .header-mobile .navbar-nav .contact-block:hover {
+      background: #ffffff; }
   .header-mobile .domain-block {
     background: #f7f7f7; }
     .header-mobile .domain-block a {
       display: block;
-      color: #c2c2c2; }
+      color: #808080; }
     .header-mobile .domain-block .glyphicon {
       background: #e6e6e6;
       border-radius: 50%;
@@ -328,6 +334,8 @@ nav {
       .header-mobile .domain-block.active .glyphicon, .header-mobile .domain-block:hover .glyphicon {
         background: #1a9a3b;
         color: #ffffff; }
+      .header-mobile .domain-block.active a, .header-mobile .domain-block:hover a {
+        color: #1a9a3b; }
 
 /** landing */
 .landing-body {
@@ -350,12 +358,13 @@ nav {
       border: 1px solid white;
       border-radius: 10px;
       margin: 20% 20px 10%;
-      background-color: rgba(255, 255, 255, 0.5); }
+      background-color: rgba(255, 255, 255, 0.55); }
       .landing-body #landing .landing-container .top-row {
         padding: 20px 0; }
       .landing-body #landing .landing-container .middle-row {
         border-top: 1px solid white;
-        box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1); }
+        box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.65); }
         .landing-body #landing .landing-container .middle-row > div {
           padding: 20px; }
           .landing-body #landing .landing-container .middle-row > div img {
@@ -856,6 +865,8 @@ nav {
         text-overflow: ellipsis; }
     .search-body .region-content .search-result-pane .views-row-odd {
       background-color: #f7f7f7; }
+    .search-body .region-content .search-result-pane .view-empty h3 {
+      border-bottom: none; }
   .search-body .region-content .search-type-pane .search-type-title {
     margin-bottom: 20px; }
   .search-body .region-content .search-type-pane a {
@@ -867,49 +878,65 @@ nav {
 
 /** end search */
 /** prospect */
-#lightbox #outerImageContainer {
-  border-radius: 5px; }
-#lightbox #imageDataContainer {
-  display: none;
-  height: 0;
-  overflow: hidden; }
-
-.page-node-lightbox .prospect-content, .lightbox-processed .prospect-content {
-  border: none;
-  background-color: transparent; }
-  .page-node-lightbox .prospect-content h3, .lightbox-processed .prospect-content h3 {
-    border: none; }
-  .page-node-lightbox .prospect-content .white-bg, .lightbox-processed .prospect-content .white-bg {
-    background-color: white; }
-  .page-node-lightbox .prospect-content .or, .lightbox-processed .prospect-content .or {
-    background-color: #e6e6e6;
-    height: 1px;
-    margin: 20px 0; }
-    .page-node-lightbox .prospect-content .or span, .lightbox-processed .prospect-content .or span {
-      display: inline-block;
-      line-height: 20px;
-      margin-top: -20px;
-      padding: 0 20px;
-      vertical-align: middle;
-      background-color: white; }
-  .page-node-lightbox .prospect-content form > div, .lightbox-processed .prospect-content form > div {
-    text-align: center; }
-  .page-node-lightbox .prospect-content form .form-item, .lightbox-processed .prospect-content form .form-item {
-    padding: 0 20px 10px;
-    background-color: white; }
-    .page-node-lightbox .prospect-content form .form-item label, .lightbox-processed .prospect-content form .form-item label {
-      float: left; }
-      .page-node-lightbox .prospect-content form .form-item label .form-required, .lightbox-processed .prospect-content form .form-item label .form-required {
-        color: red; }
-    .page-node-lightbox .prospect-content form .form-item input, .lightbox-processed .prospect-content form .form-item input {
-      clear: left; }
-  .page-node-lightbox .prospect-content form .webform-component--qq-id, .lightbox-processed .prospect-content form .webform-component--qq-id {
-    padding-bottom: 40px;
-    border-bottom: 1px solid #e6e6e6;
-    margin-bottom: 20px; }
-  .page-node-lightbox .prospect-content button, .lightbox-processed .prospect-content button {
-    background-color: #1a9a3b;
-    width: 76%; }
+body.overlay #overlay {
+  margin-top: 4.5%; }
+  body.overlay #overlay #overlay-titlebar {
+    display: none; }
+  body.overlay #overlay #overlay-content {
+    border-radius: 5px;
+    padding: 0;
+    color: #848484; }
+    body.overlay #overlay #overlay-content .prospect-content, body.overlay #overlay #overlay-content .overlay-content {
+      border: none;
+      background-color: transparent;
+      margin: 0; }
+      body.overlay #overlay #overlay-content .prospect-content .button-box, body.overlay #overlay #overlay-content .overlay-content .button-box {
+        border-top: 1px solid #e6e6e6;
+        background-color: #fcfcfc;
+        margin-top: 20px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px; }
+        body.overlay #overlay #overlay-content .prospect-content .button-box #overlay-close, body.overlay #overlay #overlay-content .overlay-content .button-box #overlay-close {
+          background: #1a9a3b;
+          border-radius: 5px;
+          display: block;
+          height: auto;
+          margin: 20px 0;
+          padding: 10px;
+          position: inherit;
+          width: auto; }
+      body.overlay #overlay #overlay-content .prospect-content h3, body.overlay #overlay #overlay-content .overlay-content h3 {
+        border: none; }
+      body.overlay #overlay #overlay-content .prospect-content .or, body.overlay #overlay #overlay-content .overlay-content .or {
+        background-color: #e6e6e6;
+        height: 1px;
+        margin: 20px 0; }
+        body.overlay #overlay #overlay-content .prospect-content .or span, body.overlay #overlay #overlay-content .overlay-content .or span {
+          display: inline-block;
+          line-height: 20px;
+          margin-top: -20px;
+          padding: 0 20px;
+          vertical-align: middle;
+          background-color: white; }
+      body.overlay #overlay #overlay-content .prospect-content form > div, body.overlay #overlay #overlay-content .overlay-content form > div {
+        text-align: center; }
+      body.overlay #overlay #overlay-content .prospect-content form .form-item, body.overlay #overlay #overlay-content .overlay-content form .form-item {
+        padding: 0 20px 10px;
+        background-color: white; }
+        body.overlay #overlay #overlay-content .prospect-content form .form-item label, body.overlay #overlay #overlay-content .overlay-content form .form-item label {
+          float: left; }
+          body.overlay #overlay #overlay-content .prospect-content form .form-item label .form-required, body.overlay #overlay #overlay-content .overlay-content form .form-item label .form-required {
+            color: red; }
+        body.overlay #overlay #overlay-content .prospect-content form .form-item input, body.overlay #overlay #overlay-content .overlay-content form .form-item input {
+          clear: left; }
+      body.overlay #overlay #overlay-content .prospect-content form .webform-component--qq-id, body.overlay #overlay #overlay-content .overlay-content form .webform-component--qq-id {
+        padding-bottom: 40px;
+        border-bottom: 1px solid #e6e6e6;
+        margin-bottom: 20px; }
+      body.overlay #overlay #overlay-content .prospect-content button, body.overlay #overlay #overlay-content .overlay-content button {
+        background-color: #1a9a3b;
+        width: 76%;
+        margin-bottom: 20px; }
 
 /** end prospect */
 footer {

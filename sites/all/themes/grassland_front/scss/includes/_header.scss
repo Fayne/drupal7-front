@@ -147,7 +147,13 @@ nav {
     li{
       padding: $section-distance / 2 $bootstrap-distance;
       border-bottom: 1px solid $border-color;
-      &:hover{
+      a{
+        color: $fifth-font-color;
+        &:hover,&:focus{
+          background-color: transparent;
+        }
+      }
+      &:hover,&.active-trail{
         background: $third-bg-color;
         a{
           color: $main-color;
@@ -200,13 +206,16 @@ nav {
     }
   }
   .navbar-nav .contact-block{
-    background: $main-bg-color;
+    background: $header-bg-color;
+    &:hover{
+      background: $header-bg-color;
+    }
   }
   .domain-block {
     background: $main-bg-color;
     a{
       display: block;
-      color: $font-header-color;
+      color: $fifth-font-color;
     }
     .glyphicon{
       background: $fourth-bg-color;
@@ -223,6 +232,9 @@ nav {
       .glyphicon{
         background: $main-color;
         color: $reverse-color;
+      }
+      a{
+        color: $main-color;
       }
     }
   }

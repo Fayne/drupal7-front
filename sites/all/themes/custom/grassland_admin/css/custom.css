@@ -3,6 +3,12 @@ table {
   table th, table td {
     padding: 8px 10px;
     border: none; }
+  table tr.even {
+    background-color: #fcfcfc; }
+  table tr.odd {
+    background-color: #ffffff; }
+  table td.active {
+    background-color: #f7f7f7; }
   table th.radio, table th.checkbox,
   table td.radio, table td.checkbox {
     display: table-cell; }
@@ -60,6 +66,8 @@ table {
   transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
   vertical-align: middle;
   width: 100%; }
+.node-form .group-parameters .form-text, .node-form .group-parameters .form-select {
+  display: inline-block; }
 .node-form .image-widget-data .form-item {
   margin-top: 20px; }
 .node-form .image-widget-data .description {
@@ -77,6 +85,15 @@ table {
 .btn-warning {
   margin-right: 20px; }
 
+/** reporting */
+.page-node-submission fieldset.webform-submission-info {
+  padding-left: 0;
+  padding-right: 0; }
+  .page-node-submission fieldset.webform-submission-info .webform-submission-info-text {
+    line-height: 2em;
+    padding: 0 10px; }
+
+/** end reporting */
 footer.site-footer {
   position: fixed;
   bottom: 0;

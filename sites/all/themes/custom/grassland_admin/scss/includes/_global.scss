@@ -5,6 +5,15 @@ table{
     padding: 8px 10px;
     border: none;
   }
+  tr.even{
+    background-color: $second-bg-color;
+  }
+  tr.odd {
+    background-color: #ffffff;
+  }
+  td.active{
+    background-color: $main-bg-color;
+  }
   th.radio, th.checkbox,
   td.radio, td.checkbox{
     display: table-cell;
@@ -77,6 +86,11 @@ table{
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     vertical-align: middle;
     width: 100%;
+  }
+  .group-parameters{
+    .form-text, .form-select {
+      display: inline-block;
+    }
   }
   .image-widget-data {
     .form-item {

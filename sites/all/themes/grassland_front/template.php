@@ -23,8 +23,11 @@ function grassland_front_preprocess_html(&$variables) {
 function grassland_front_preprocess_page(&$vars) {
 
     // overlay
-    if (isset($vars['node']->type) && isset($vars['node']->title) && $vars['node']->type == 'webform' && $vars['node']->title == 'Prospect') {
+    if (isset($vars['node']->type) && isset($vars['node']->title) && $vars['node']->type == 'webform' && $vars['node']->title == 'Prospect' ) {
         $vars['theme_hook_suggestions'][] = 'page__prospect';
+    }
+    else if( isset($vars['node']->type) && $vars['node']->type == 'overlay'){
+        $vars['theme_hook_suggestions'][] = 'page__overlay';
     }
 
     // add jqueryui
