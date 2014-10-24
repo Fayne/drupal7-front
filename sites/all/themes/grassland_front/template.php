@@ -83,8 +83,6 @@ function grassland_front_format_comma_field($field_category, $node, $limit = NUL
 
 function grassland_front_form_alter(&$form, &$form_state, $form_id) {
 
-
-
     switch ($form_id) {
 
         case 'search_block_form':

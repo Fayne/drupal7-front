@@ -2,6 +2,7 @@
 $main-color : #1a9a3b;
 $main-color-hover : #2faf3f;
 $font-color: #848484;
+$right-title-color: #cdcdcd;
 $second-font-color: #c0c0c0;
 $third-font-color: #b0b0b0;
 $fourth-font-color: #b2b2b2;
@@ -17,10 +18,11 @@ $border-color: #e6e6e6;
 $circle-border-color: #e0e0e0;
 $nav-color: #7f7f7f;
 $nav-hover-bg-color: #fcfcfc;
-$caption-bg-color: rgba(127, 127, 127, 0.5);
+$caption-bg-color: rgba(0, 0, 0, 0.2);
 $second-bg-color: #ffffff;
 $third-bg-color: #fcfcfc;
 $fourth-bg-color: #e6e6e6;
+$caption-text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
 
 // define section padding
 $section-distance: 20px;
@@ -31,6 +33,7 @@ $icon-distance: 30px;
 
 html{
   height: 100%;
+  background-color: $footer-bg-color;
 }
 body{
   color: $font-color;
@@ -62,6 +65,11 @@ h4,h5,h6{
   background: $second-bg-color;
   border: 1px solid $border-color;
 }
+.region-two-66-33-second{
+  h3{
+    color: $right-title-color;
+  }
+}
 .header_contacts{
   background: $main-color;
   color: $reverse-color;
@@ -83,7 +91,11 @@ h4,h5,h6{
     }
   }
   .glyphicon{
+    font-size: 19px;
     margin-right: 10px;
+    vertical-align: baseline;
+    top: 3px;
+
   }
   .service{
     border-left: 1px solid rgba(30, 30, 30, 0.29);
@@ -144,12 +156,14 @@ h4,h5,h6{
 .button{
   background-color: $main-color;
   border-radius: 5px;
-  box-shadow: 1px 1px 0 0 $third-bg-color;
+  border: 1px solid #26af4a;
+  box-shadow: 0px 0px 0px 1px #178031;
   color: $reverse-color;
   display: block;
   font-weight: bold;
   padding: $section-distance / 2 0;
   text-align: center;
+  text-shadow: 1px 1px 1px #178031;
   &:hover, &:focus{
     color: $reverse-color;
   }

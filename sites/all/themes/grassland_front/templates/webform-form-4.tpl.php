@@ -32,6 +32,8 @@
     print '</div>';
   }
 
+print_r(drupal_get_messages($type = 'error'));
+
   // Print out the main part of the form.
   // Feel free to break this up and move the pieces within the array.
   print drupal_render($form['submitted']);

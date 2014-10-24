@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lato|Arvo:400|Allan|Cabin|Cardo|Chivo|Courgette|Cuprum|Dancing+Script:700|Droid+Sans|Droid+Serif|Dosis:500|Lobster|Lobster+Two|Mako|Merienda+One|Miniver|Molengo|Open+Sans|Oxygen|Playball|Pontano+Sans|Philosopher|PT+Sans|PT+Sans+Narrow|Radley|Rokkitt|Salsa|Vollkorn|Ubuntu|Yanone+Kaffeesatz);
 html {
-  height: 100%; }
+  height: 100%;
+  background-color: #333333; }
 
 body {
   color: #848484;
@@ -31,6 +32,9 @@ h4, h5, h6 {
   background: #ffffff;
   border: 1px solid #e6e6e6; }
 
+.region-two-66-33-second h3 {
+  color: #cdcdcd; }
+
 .header_contacts {
   background: #1a9a3b;
   color: #ffffff;
@@ -49,7 +53,10 @@ h4, h5, h6 {
     .header_contacts a:active {
       color: #ffffff; }
   .header_contacts .glyphicon {
-    margin-right: 10px; }
+    font-size: 19px;
+    margin-right: 10px;
+    vertical-align: baseline;
+    top: 3px; }
   .header_contacts .service {
     border-left: 1px solid rgba(30, 30, 30, 0.29);
     box-shadow: -1px 0 0 0 rgba(200, 200, 200, 0.5);
@@ -108,12 +115,14 @@ h4, h5, h6 {
 .button {
   background-color: #1a9a3b;
   border-radius: 5px;
-  box-shadow: 1px 1px 0 0 #fcfcfc;
+  border: 1px solid #26af4a;
+  box-shadow: 0px 0px 0px 1px #178031;
   color: #ffffff;
   display: block;
   font-weight: bold;
   padding: 10px 0;
-  text-align: center; }
+  text-align: center;
+  text-shadow: 1px 1px 1px #178031; }
   .button:hover, .button:focus {
     color: #ffffff; }
 
@@ -161,7 +170,7 @@ header {
     display: inline-block;
     margin: 0 0 0 10px; }
     header .select-domain-list .cur-domain {
-      color: #1a9a3b; }
+      color: #848484; }
     header .select-domain-list > li {
       position: relative;
       padding-right: 30px;
@@ -170,6 +179,8 @@ header {
         display: block; }
     header .select-domain-list .other-domains {
       display: none;
+      min-width: 100px;
+      text-align: center;
       position: absolute;
       margin-top: -27px;
       padding-top: 54px;
@@ -180,7 +191,7 @@ header {
         border-top: none;
         background-color: #fcfcfc;
         white-space: nowrap;
-        line-height: 30px;
+        line-height: 20px;
         padding: 10px 30px;
         border-bottom: 1px solid #e6e6e6; }
         header .select-domain-list .other-domains li:last-child {
@@ -208,7 +219,9 @@ nav {
       color: #7f7f7f;
       border-top: none;
       border-bottom: 3px solid transparent;
-      line-height: 32px; }
+      line-height: 32px;
+      border-left: none;
+      border-right: none; }
       .nav-tabs li a:hover, .nav-tabs li a.active {
         border-radius: 0;
         border-top: none;
@@ -231,7 +244,6 @@ nav {
   background: none repeat scroll 0 0 #fbfbfb;
   border: 1px solid #eeeeee;
   border-radius: 5px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05) inset;
   color: #cccccc;
   float: right;
   font-size: 13px;
@@ -262,7 +274,8 @@ nav {
   right: 5px;
   top: 0;
   width: 30px;
-  z-index: 100; }
+  z-index: 100;
+  font-size: 19px; }
 
 .header-mobile {
   background: #ffffff;
@@ -367,11 +380,12 @@ nav {
         box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1);
         background-color: rgba(255, 255, 255, 0.65); }
         .landing-body #landing .landing-container .middle-row > div {
-          padding: 20px; }
+          padding: 20px 20px 25px; }
           .landing-body #landing .landing-container .middle-row > div img {
             border-radius: 50%;
             margin-bottom: 25px;
-            border: 1px solid white; }
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 0px 0px rgba(255, 250, 250, 0.3); }
           .landing-body #landing .landing-container .middle-row > div .button {
             margin: 0 auto;
             max-width: 250px; }
@@ -405,8 +419,10 @@ nav {
     .home-slider-pane .nivo-controlNav a.active {
       background-position: 0 -22px; }
   .home-slider-pane .nivo-caption {
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.15);
-    padding: 20px 20px 50px; }
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    padding: 20px 20px 50px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5); }
     .home-slider-pane .nivo-caption h1, .home-slider-pane .nivo-caption h2, .home-slider-pane .nivo-caption h3, .home-slider-pane .nivo-caption h4, .home-slider-pane .nivo-caption h5, .home-slider-pane .nivo-caption h6 {
       border: 0;
       color: white; }
@@ -416,18 +432,22 @@ nav {
       font-size: 1.2em; }
 
 .home-bottom-pane {
-  padding: 20px;
+  padding: 40px 20px 20px;
   margin-top: 40px;
-  height: 430px;
+  height: 500px;
   position: relative; }
   .home-bottom-pane .gl-title-lg {
     border: none;
     margin: 0;
-    height: auto; }
+    height: auto;
+    margin-bottom: 20px;
+    font-size: 36px; }
   .home-bottom-pane .description {
     margin-bottom: 20px;
     height: 140px;
-    overflow: hidden; }
+    overflow: hidden;
+    font-size: 20px;
+    color: #808080; }
   .home-bottom-pane .button-box {
     width: 40%; }
 
@@ -453,7 +473,7 @@ nav {
   .about-body .about-header-pane .about-header-img img {
     width: 100%; }
   .about-body .about-header-pane .about-header-caption {
-    background-color: rgba(127, 127, 127, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     padding: 20px;
     bottom: 0;
     left: 0;
@@ -663,7 +683,8 @@ nav {
   .faqs-list-pane li p {
     margin: 0; }
   .faqs-list-pane li em {
-    color: #1a9a3b; }
+    color: #1a9a3b;
+    margin-left: 5px; }
 
 /** end products */
 /** product detail */
@@ -674,7 +695,9 @@ nav {
   padding-bottom: 20px; }
 .node-type-product .product-detail-main h3 {
   color: #1a9a3b;
-  margin: 20px; }
+  margin: 20px;
+  border: none;
+  padding: 0; }
 .node-type-product .product-detail-main p {
   margin: 0; }
 .node-type-product .product-detail-main .product-description {
@@ -702,6 +725,8 @@ nav {
   .node-type-product .application-pane .webform-component-fieldset {
     border-bottom: 1px solid #e6e6e6;
     margin: 20px 0 10px; }
+  .node-type-product .application-pane .webform-component--hidden {
+    display: none; }
   .node-type-product .application-pane .panel-default > .panel-heading {
     background: transparent;
     padding: 0;
@@ -776,7 +801,8 @@ nav {
   margin: 0 20px; }
 .career-body .career-list-item {
   border: 1px solid #e6e6e6;
-  margin: 0 20px 20px; }
+  margin: 0 20px 20px;
+  border-radius: 5px; }
   .career-body .career-list-item .gl-title {
     border: none;
     margin-bottom: 10px;
