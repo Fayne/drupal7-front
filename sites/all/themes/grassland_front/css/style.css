@@ -4,7 +4,8 @@ html {
 
 body {
   color: #848484;
-  background: #f7f7f7; }
+  background: #f7f7f7;
+  font-family: "hei regular","Helvetica Neue",Helvetica,Arial,sans-serif; }
 
 ul, li {
   list-style: none; }
