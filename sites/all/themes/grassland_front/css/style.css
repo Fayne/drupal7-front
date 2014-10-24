@@ -878,6 +878,12 @@ nav {
 
 /** end search */
 /** prospect */
+#overlay-container, .overlay-modal-background, .overlay-element {
+  z-index: 1001; }
+
+.overlay-element.overlay-active {
+  z-index: 1002; }
+
 body.overlay #overlay {
   margin-top: 4.5%; }
   body.overlay #overlay #overlay-titlebar {

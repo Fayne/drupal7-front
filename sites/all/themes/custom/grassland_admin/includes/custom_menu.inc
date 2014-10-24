@@ -159,6 +159,7 @@ function _custom_menu_superfish_build($variables)
         $show_children = $megamenu_wrapper = $megamenu_column = $megamenu_content = FALSE;
         $item_class = $link_options = $link_class = array();
         $mlid = $menu_item['link']['mlid'];
+        $link_options['html'] = TRUE;   // allow html for menu
 
         if (!isset($menu_item['link']['hidden']) || $menu_item['link']['hidden'] == 0) {
             $item_class[] = ($trail && in_array($mlid, $trail)) ? 'active-trail active' : '';
@@ -196,7 +197,6 @@ function _custom_menu_superfish_build($variables)
                     $menu_item['link']['title'] .= '<span class="sf-description">';
                     $menu_item['link']['title'] .= (!empty($menu_item['link']['localized_options']['attributes']['title'])) ? $menu_item['link']['localized_options']['attributes']['title'] : array();
                     $menu_item['link']['title'] .= '</span>';
-                    $link_options['html'] = TRUE;
                 }
             }
 
@@ -230,7 +230,6 @@ function _custom_menu_superfish_build($variables)
                     array_unshift($whlt, '');
                 }
                 $menu_item['link']['title'] = $whlt[0] . check_plain($menu_item['link']['title']) . $whlt[1];
-                $link_options['html'] = TRUE;
             }
 
 

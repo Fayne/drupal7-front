@@ -1,12 +1,18 @@
 table {
   width: 100%; }
+  table thead th {
+    background-color: #ffffff; }
   table th, table td {
     padding: 8px 10px;
     border: none; }
-  table tr.even {
-    background-color: #fcfcfc; }
-  table tr.odd {
-    background-color: #ffffff; }
+  table tr.even, table tr:nth-child(2n) {
+    background-color: transparent; }
+    table tr.even td, table tr:nth-child(2n) td {
+      background-color: #ffffff; }
+  table tr.odd, table tr:nth-child(2n+1) {
+    background-color: transparent; }
+    table tr.odd td, table tr:nth-child(2n+1) td {
+      background-color: #fcfcfc; }
   table td.active {
     background-color: #f7f7f7; }
   table th.radio, table th.checkbox,
@@ -17,6 +23,9 @@ table {
     table td.radio input[type="checkbox"], table td.checkbox input[type="radio"], table td.checkbox input[type="checkbox"] {
       position: inherit;
       margin: 0; }
+
+.add-new-row {
+  margin-bottom: 20px; }
 
 .sticky-header {
   z-index: 999;
@@ -85,6 +94,22 @@ table {
 .btn-warning {
   margin-right: 20px; }
 
+/** dashboard */
+#dashboard .block {
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding-top: 10px; }
+  #dashboard .block > h2 {
+    margin: 10px;
+    font-size: 1.5em; }
+  #dashboard .block .content > p {
+    margin-left: 10px; }
+  #dashboard .block .views-table tr:last-child td:first-child {
+    border-bottom-left-radius: 5px; }
+  #dashboard .block .views-table tr:last-child td:last-child {
+    border-bottom-right-radius: 5px; }
+
+/** end dashboard */
 /** reporting */
 .page-node-submission fieldset.webform-submission-info {
   padding-left: 0;

@@ -1,15 +1,26 @@
 // views table
 table{
   width: 100%;
+  thead{
+    th{
+      background-color: #ffffff;
+    }
+  }
   th,td{
     padding: 8px 10px;
     border: none;
   }
-  tr.even{
-    background-color: $second-bg-color;
+  tr.even, tr:nth-child(2n){
+    background-color: transparent;
+    td{
+      background-color: #ffffff;
+    }
   }
-  tr.odd {
-    background-color: #ffffff;
+  tr.odd, tr:nth-child(2n+1) {
+    background-color: transparent;
+    td{
+      background-color: $second-bg-color;
+    }
   }
   td.active{
     background-color: $main-bg-color;
@@ -22,6 +33,9 @@ table{
       margin: 0;
     }
   }
+}
+.add-new-row{
+  margin-bottom: $section-distance;
 }
 .sticky-header{
   z-index: 999;

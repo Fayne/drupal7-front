@@ -1,3 +1,30 @@
+/** dashboard */
+#dashboard{
+  .block{
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding-top: $section-distance / 2;
+    > h2{
+      margin: $section-distance / 2;
+      font-size: 1.5em;
+    }
+    .content > p{
+      margin-left: $section-distance / 2;
+    }
+    .views-table{
+      tr:last-child{
+        td:first-child{
+          border-bottom-left-radius: 5px;
+        }
+        td:last-child{
+          border-bottom-right-radius: 5px;
+        }
+      }
+    }
+  }
+}
+/** end dashboard */
+
 /** reporting */
 .page-node-submission{
   fieldset.webform-submission-info{

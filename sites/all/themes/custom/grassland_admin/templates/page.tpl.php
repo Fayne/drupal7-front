@@ -6,14 +6,11 @@
         </div>
         <?php if ($logo || $site_name || $site_slogan): ?>
             <a href="/home" class="logo" >
-                <?php print $logo ? "<img src=\"{$logo}\" />" : ""; ?>&nbsp;<?php print $site_name ? $site_name : ""; ?>&nbsp;&gt;&nbsp;<?php print $site_slogan ? $site_slogan : ""; ?>
+                <?php print $logo ? "<img src=\"{$logo}\" />" : ""; ?>&nbsp;<?php print $site_name ? $site_name : ""; ?><?php print $site_slogan ? '&nbsp;&gt;&nbsp;' . $site_slogan : ""; ?>
             </a>
         <?php endif; ?>
         <div class="top-nav ">
             <ul class="nav pull-right top-menu">
-                <li>
-                    <input type="text" class="form-control search" placeholder="Search">
-                </li>
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -42,7 +39,7 @@
     <section id="main-content">
         <section class="wrapper">
             <!-- Breadcrumbs -->
-            <?php if ($breadcrumb): print $breadcrumb; endif; ?>
+            <?php if ($breadcrumb && false): print $breadcrumb; endif; ?>
             <?php print $messages; ?>
             <?php print render($page['help']); ?>
             <?php if ($title): ?>
