@@ -12,6 +12,12 @@
   .search-body .region-content .search-result-pane .views-row-odd{
     background-color: transparent;
   }
+  .news-tags-pane{
+    margin-top: $section-distance;
+  }
+  .news-tags-pane,.news-date-pane{
+    margin-left: $section-distance;
+  }
 }
 @media (max-width: 749px) {
   .main-content {

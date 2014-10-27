@@ -1,2 +1,2 @@
 #panels-dnd-main .region {margin-bottom: 5px}
-#panels-dnd-main .col-md-6 {float: left; width: 50%}
+.panel-left,.panel-right {float: left; width: 50%}

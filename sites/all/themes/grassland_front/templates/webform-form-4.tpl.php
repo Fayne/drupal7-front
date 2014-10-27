@@ -32,6 +32,8 @@
     print '</div>';
   }
 
+print_r($form);
+
 print_r(drupal_get_messages($type = 'error'));
 
   // Print out the main part of the form.
