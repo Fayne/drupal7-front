@@ -1,0 +1,8 @@
+name = Grassland Product Filter
+description = Filter which is the best product for client
+dependencies[] = block
+dependencies[] = node
+
+package = Grassland
+core = 7.x
+

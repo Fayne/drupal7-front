@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * Implements hook_theme.
+ */
+function grassland_product_filter_theme() {
+  return array(
+    'grassland_product_filter' => array(
+      'variables' => array(),
+      'template' => 'grassland_product_filter'
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function grassland_product_filter_block_info() {
+  $blocks['grassland_product_filter']['info'] = t('grassland_product_filter');
+  $blocks['grassland_product_filter']['cache'] = DRUPAL_NO_CACHE;
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function grassland_product_filter_block_view($delta = '') {
+  $products = node_load_multiple(array(), array('type' => 'product', 'status' => 1));
+
+  _grassland_product_filter_settings($products);
+
+  drupal_add_js(drupal_get_path('module', 'grassland_product_filter') . '/angular.min.js', ['module']);
+  drupal_add_js(drupal_get_path('module', 'grassland_product_filter') . '/grassland_product_filter.js', ['module']);
+
+  return array('content' => theme('grassland_product_filter'));
+}
+
+/**
+ * Adds the module settings to Drupal.settings.
+ *
+ * @param $products
+ * @return array
+ */
+function _grassland_product_filter_settings($products) {
+  $loan_min_arr = $loan_max_arr = $tenure_min_arr = $tenure_max_arr = array();
+
+  foreach ($products as $product) {
+    array_push($loan_min_arr, $product->field_product_min_loan['und'][0]['value']);
+    array_push($loan_max_arr, $product->field_product_max_loan['und'][0]['value']);
+    array_push($tenure_min_arr, $product->field_product_min_tenure['und'][0]['value']);
+    array_push($tenure_max_arr, $product->field_product_max_tenure['und'][0]['value']);
+  }
+
+  sort($loan_min_arr);
+  rsort($loan_max_arr);
+  sort($tenure_min_arr);
+  rsort($tenure_max_arr);
+
+  $settings = array(
+    'productFilter' => array(
+      'minLoan' => (int)current($loan_min_arr),
+      'maxLoan' => (int)current($loan_max_arr),
+      'minTenure' => (int)current($tenure_min_arr),
+      'maxTenure' => (int)current($tenure_max_arr)
+    )
+  );
+
+  drupal_add_js($settings, 'setting');
+}
