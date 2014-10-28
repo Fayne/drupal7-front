@@ -18,12 +18,12 @@
   .news-tags-pane,.news-date-pane{
     margin-left: $section-distance;
   }
+  .home-bottom-pane{
+    margin: 0;
+  }
 }
 @media (max-width: 749px) {
   .main-content {
-    margin: 0;
-  }
-  .home-bottom-pane{
     margin: 0;
   }
   .product-list-pane .product-list-item {
@@ -52,5 +52,18 @@
   }
   .search-body .region-content .search-result-pane{
     border: none;
+  }
+  .product_filter_pane {
+    .product-filter-inner{
+      padding-bottom: 0;
+      min-height: inherit;
+    }
+    .filtered-product{
+      background: url("../images/11_mp_arrow_calculator.png") no-repeat scroll center top transparent;
+      min-height: 400px;
+      .result-caption{
+        top: 30%;
+      }
+    }
   }
 }

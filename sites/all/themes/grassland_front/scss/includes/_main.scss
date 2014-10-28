@@ -99,9 +99,11 @@
 .product_filter_pane{
   margin-top: 40px;
   padding: 0;
+  background: url(../images/11_img_calculator_product1.png) no-repeat right bottom #FFFFFF;
   .product-filter-inner{
     padding: $section-distance * 2 $section-distance;
     background: white;
+    min-height: 376px;
     .filter-title-row{
       .filter-title{
         float: left;
@@ -174,7 +176,7 @@
     color: red;
   }
   .filtered-product{
-    background: url(../images/11_img_calculator_product1.png) no-repeat right top #FFFFFF;
+    background: url(../images/11_ws_arrow_calculator.png) no-repeat left center transparent;
     min-height: 376px;
     position: relative;
     color: white;
@@ -223,11 +225,11 @@
   }
 }
 .home-about-pane{
-  background: url(../images/about-home-bg.png) no-repeat scroll bottom right white;
+  background: url(../images/11_img_office_about.png) no-repeat scroll bottom center white;
   margin-right: $section-distance;
 }
 .home-product-pane{
-  background: url(../images/feature-home-bg.png) no-repeat scroll bottom right white;
+  background: url(../images/11_img_example.png) no-repeat scroll bottom center white;
   margin-left: $section-distance;
 }
 /** end homepage */

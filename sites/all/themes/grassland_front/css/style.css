@@ -130,6 +130,12 @@ h4, h5, h6 {
   display: inline-block;
   width: 50%; }
 
+.alert {
+  padding: 0; }
+
+.fade {
+  opacity: 0; }
+
 .lable-left {
   float: left;
   text-align: left; }
@@ -433,10 +439,12 @@ nav {
 
 .product_filter_pane {
   margin-top: 40px;
-  padding: 0; }
+  padding: 0;
+  background: url(../images/11_img_calculator_product1.png) no-repeat right bottom #FFFFFF; }
   .product_filter_pane .product-filter-inner {
     padding: 40px 20px;
-    background: white; }
+    background: white;
+    min-height: 376px; }
     .product_filter_pane .product-filter-inner .filter-title-row .filter-title {
       float: left; }
     .product_filter_pane .product-filter-inner .filter-title-row .loan-value, .product_filter_pane .product-filter-inner .filter-title-row .tenure-value {
@@ -488,7 +496,7 @@ nav {
   .product_filter_pane .loan-warning {
     color: red; }
   .product_filter_pane .filtered-product {
-    background: url(../images/11_img_calculator_product1.png) no-repeat right top #FFFFFF;
+    background: url(../images/11_ws_arrow_calculator.png) no-repeat left center transparent;
     min-height: 376px;
     position: relative;
     color: white; }
@@ -529,11 +537,11 @@ nav {
     width: 40%; }
 
 .home-about-pane {
-  background: url(../images/about-home-bg.png) no-repeat scroll bottom right white;
+  background: url(../images/11_img_office_about.png) no-repeat scroll bottom center white;
   margin-right: 20px; }
 
 .home-product-pane {
-  background: url(../images/feature-home-bg.png) no-repeat scroll bottom right white;
+  background: url(../images/11_img_example.png) no-repeat scroll bottom center white;
   margin-left: 20px; }
 
 /** end homepage */
@@ -1084,12 +1092,12 @@ footer a {
     margin-top: 20px; }
 
   .news-tags-pane, .news-date-pane {
-    margin-left: 20px; } }
-@media (max-width: 749px) {
-  .main-content {
-    margin: 0; }
+    margin-left: 20px; }
 
   .home-bottom-pane {
+    margin: 0; } }
+@media (max-width: 749px) {
+  .main-content {
     margin: 0; }
 
   .product-list-pane .product-list-item {
@@ -1116,6 +1124,15 @@ footer a {
     padding-top: 20px; }
 
   .search-body .region-content .search-result-pane {
-    border: none; } }
+    border: none; }
+
+  .product_filter_pane .product-filter-inner {
+    padding-bottom: 0;
+    min-height: inherit; }
+  .product_filter_pane .filtered-product {
+    background: url("../images/11_mp_arrow_calculator.png") no-repeat scroll center top transparent;
+    min-height: 400px; }
+    .product_filter_pane .filtered-product .result-caption {
+      top: 30%; } }
 
 /*# sourceMappingURL=style.css.map */

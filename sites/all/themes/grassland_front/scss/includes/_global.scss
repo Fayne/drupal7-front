@@ -173,6 +173,12 @@ h4,h5,h6{
   display: inline-block;
   width: 50%;
 }
+.alert{
+  padding: 0;
+}
+.fade{
+  opacity: 0;
+}
 .lable-left{
   float: left;
   text-align: left;
