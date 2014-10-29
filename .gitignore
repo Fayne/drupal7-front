@@ -10,3 +10,4 @@ sites/*/private
 
 #ignore workspace file
 workspace.xml
+.idea/vcs.xml

@@ -30,7 +30,8 @@ function grassland_product_filter_block_view($delta = '') {
 
   _grassland_product_filter_settings($products);
 
-  drupal_add_js(drupal_get_path('module', 'grassland_product_filter') . '/angular.min.js', ['module']);
+  drupal_add_js(drupal_get_path('module', 'grassland_product_filter') . '/libs/angular.min.js', ['module']);
+  drupal_add_js(drupal_get_path('module', 'grassland_product_filter') . '/libs/lodash.compat.min.js', ['module']);
   drupal_add_js(drupal_get_path('module', 'grassland_product_filter') . '/grassland_product_filter.js', ['module']);
 
   return array('content' => theme('grassland_product_filter'));
@@ -43,13 +44,31 @@ function grassland_product_filter_block_view($delta = '') {
  * @return array
  */
 function _grassland_product_filter_settings($products) {
-  $loan_min_arr = $loan_max_arr = $tenure_min_arr = $tenure_max_arr = array();
+  $loan_min_arr = $loan_max_arr = $tenure_min_arr = $tenure_max_arr = $format_products = array();
 
-  foreach ($products as $product) {
+  foreach ($products as $nid => $product) {
     array_push($loan_min_arr, $product->field_product_min_loan['und'][0]['value']);
     array_push($loan_max_arr, $product->field_product_max_loan['und'][0]['value']);
     array_push($tenure_min_arr, $product->field_product_min_tenure['und'][0]['value']);
     array_push($tenure_max_arr, $product->field_product_max_tenure['und'][0]['value']);
+
+    $format_product = array();
+    $format_product['nid'] = $nid;
+    $format_product['title'] = $product->title;
+    $format_product['status'] = (int)$product->status;
+    $format_product['created'] = (int)$product->created;
+    $format_product['changed'] = (int)$product->changed;
+    $format_product['body'] = $product->body['und'][0]['value'];
+    $format_product['image'] = file_create_url($product->field_image['und'][0]['uri']);
+    $format_product['thumbnail'] = file_create_url($product->field_product_thumb['und'][0]['uri']);
+    $format_product['minLoan'] = (int)$product->field_product_min_loan['und'][0]['value'];
+    $format_product['maxLoan'] = (int)$product->field_product_max_loan['und'][0]['value'];
+    $format_product['minInterest'] = (float)$product->field_product_min_interest['und'][0]['value'];
+    $format_product['maxInterest'] = (float)$product->field_product_max_interest['und'][0]['value'];
+    $format_product['minTenure'] = (int)$product->field_product_min_tenure['und'][0]['value'];
+    $format_product['maxTenure'] = (int)$product->field_product_max_tenure['und'][0]['value'];
+
+    array_push($format_products, $format_product);
   }
 
   sort($loan_min_arr);
@@ -62,7 +81,8 @@ function _grassland_product_filter_settings($products) {
       'minLoan' => (int)current($loan_min_arr),
       'maxLoan' => (int)current($loan_max_arr),
       'minTenure' => (int)current($tenure_min_arr),
-      'maxTenure' => (int)current($tenure_max_arr)
+      'maxTenure' => (int)current($tenure_max_arr),
+      'products' => $format_products
     )
   );
 

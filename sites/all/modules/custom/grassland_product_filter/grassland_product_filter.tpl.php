@@ -47,36 +47,47 @@
       <div class="result-detail">
         <div class="refund-col">
           <div class="name">每月偿还</div>
-          <div class="value">￥ 287.69</div>
+          <div class="value">￥ {{ result.perMonth }}</div>
         </div>
         <div class="rate-col">
           <div class="name">利率</div>
-          <div class="value">5.9%</div>
+          <div class="value">{{ result.rate }}%</div>
         </div>
         <div class="totle-col">
           <div class="name">总共偿还</div>
-          <div class="value">￥ 13,809</div>
+          <div class="value">￥ {{ result.total }}</div>
         </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="col-sm-6 filtered-product-container">
+    <div class="filtered-product" ng-repeat="product in products">
+      <div class="filtered-product-img">
+        <img src="http://grassland.fayne.org/sites/default/files/11_img_calculator_product1.jpg">
+      </div>
+      <div class="result-caption">
+        <div class="result-title">
+          最佳方案：
+        </div>
+        <div class="result-value">
+          中小企业贷款
+        </div>
+      </div>
+      <div class="result-buttons">
+        <div class="buttons">
+          <a class="button">立即申请</a>
+        </div>
+        <div class="warning">
+          具体数字可能在对您详细评估后有所变动
+        </div>
       </div>
     </div>
+    <div class="test-tag-container">
+    <a href="#{{product.nid}}"  ng-repeat="product in products" class="test-tag">{{product.title}}</a>
+    </div>
+    <div class="arrow-bg"></div>
   </div>
-  <div class="col-sm-6 filtered-product">
-    <div class="result-caption">
-      <div class="result-title">
-        最佳方案：
-      </div>
-      <div class="result-value">
-        中小企业贷款
-      </div>
-    </div>
-    <div class="result-buttons">
-      <div class="buttons">
-        <a class="button">立即申请</a>
-      </div>
-      <div class="warning">
-        具体数字可能在对您详细评估后有所变动
-      </div>
-    </div>
-  </div>
+
+
 </div>

@@ -99,7 +99,8 @@
 .product_filter_pane{
   margin-top: 40px;
   padding: 0;
-  background: url(../images/11_img_calculator_product1.png) no-repeat right bottom #FFFFFF;
+//  background: url(../images/11_img_calculator_product1.png) no-repeat right bottom #FFFFFF;
+  background: #FFFFFF;
   .product-filter-inner{
     padding: $section-distance * 2 $section-distance;
     background: white;
@@ -175,11 +176,37 @@
   .loan-warning{
     color: red;
   }
-  .filtered-product{
+  .filtered-product-container{
     background: url(../images/11_ws_arrow_calculator.png) no-repeat left center transparent;
-    min-height: 376px;
+    height: 376px;
     position: relative;
     color: white;
+    overflow: hidden;
+    .filtered-product-img{
+      position: relative;
+      height: 376px;
+      width: 100%;
+      img{
+        position: absolute;
+        right: 0;
+        height: 100%;
+      }
+    }
+    .product-filter-slider{
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      .nivo-slice{
+        position: relative;
+      }
+      img{
+        width: auto !important;
+        float: right;
+        display: block;
+        right: 0;
+      }
+    }
     .result-caption{
       position: absolute;
       min-width: 50%;
@@ -198,6 +225,37 @@
         max-width: 200px;
         margin-bottom: $section-distance;
       }
+    }
+    .test-tag-container{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: block;
+      background: white;
+      padding: 10px;
+      a{
+        display: block;
+      }
+    }
+  }
+  .nivo-controlNav {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    a{
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      background: url(../images/bullets.png) no-repeat;
+      text-indent: -9999px;
+      border: 0;
+      margin: 0 2px;
+      cursor: pointer;
+    }
+    a.active{
+      background-position: 0 -22px;
     }
   }
 }
@@ -554,7 +612,7 @@
       padding: 0 $section-distance;
     }
     .product-detail-table{
-      margin: $section-distance $section-distance 0 0;
+      margin: $section-distance $section-distance 0;
       border: 1px solid $border-color;
       border-bottom: none;
       line-height: 2.5em;
@@ -572,6 +630,11 @@
           color: $third-font-color;
         }
       }
+    }
+  }
+  .product-list-pane{
+    .product-list-item{
+      padding: 0 0 0 20px;
     }
   }
   .application-pane{
