@@ -1,33 +1,6 @@
 (function ($) {
     Drupal.behaviors.productFilter = {
         attach: function (context, settings) {
-//            $('.product-filter-slider', context).once('nivo-slider', function () {
-//                var vns = $(this);
-//                var cfgs = angular.copy(Drupal.settings.views_nivo_slider);
-//                for(var idx in cfgs){
-//                    var cfg = cfgs[idx];
-//                    break;
-//                }
-//
-//                cfg.manualAdvance = true;
-//                cfg.slices = 1;
-//                cfg.effect = 'fade';
-//                cfg.animSpeed = '1';
-//
-//                // Fix sizes
-//                vns.data('hmax', 0).data('wmax', 0);
-//                $('img', vns).each(function () {
-//                    $(this).load(function () {
-//                        hmax = (vns.data('hmax') > $(this).height()) ? vns.data('hmax') : $(this).height();
-//                        wmax = (vns.data('wmax') > $(this).width()) ? vns.data('wmax') : $(this).width();
-//
-//                        // vns.width(wmax).height(hmax).data('hmax', hmax).data('wmax', wmax); /* fixed responsive issue */
-//                        vns.data('hmax', hmax).data('wmax', wmax);
-//                    });
-//                });
-//
-//                vns.nivoSlider(cfg);
-//            });
 
             angular.module('glApp', [])
 
@@ -43,10 +16,8 @@
                     var products = SETTINGS.products
 
                     var factory = {
-
                         all: all,
                         filter: filter
-
                     };
 
                     return factory;
@@ -58,7 +29,6 @@
                     function all() {
                         return products;
                     }
-
 
                     /*
                      * Filter product by given criteria
@@ -76,11 +46,32 @@
 
                 }])
 
+                .factory('LoanCalculator', function () {
+                    return {
+                        perMonth: calculatePerMonth,
+                        rate: calculateRate,
+                        total: calculateTotal
+                    };
+
+                    function calculatePerMonth(product) {
+                        return product.maxLoan;
+                    }
+
+                    function calculateRate(product) {
+                        return product.maxInterest;
+                    }
+
+                    function calculateTotal(product) {
+                        return product.maxInterest * product.maxLoan;
+                    }
+                })
+
                 /*
                  * Controllers
                  */
                 .controller('MainController', ['$scope', 'SETTINGS', 'Product', function ($scope, SETTINGS, Product) {
 
+                    // Initialization
                     $scope.settings = SETTINGS;
 
                     $scope.userInput = {
@@ -94,13 +85,25 @@
                         perMonth: 0
                     };
 
+                    $scope.selectedProduct = null;
+
+                    // Methods
+                    $scope.setSelectedProduct = function(product) {
+
+                        $scope.selectedProduct = product;
+
+                    }
+
+                    // Watchers
                     $scope.$watch('userInput', onUserInputChange, true);
 
-                    function onUserInputChange(oldValue, newValue) {
+                    // Implementations
+                    function onUserInputChange(newValue, oldValue) {
 
                         $scope.products = Product.filter(newValue);
 
                     }
+
 
                 }])
 
@@ -133,7 +136,31 @@
                         }
                     };
 
-                }]);
+                }])
+
+                .directive('glLoan', ['LoanCalculator', function (LoanCalculator) {
+
+                    return {
+                        restrict: 'A',
+                        scope: {
+                            type: '@',
+                            product: '=selectedProduct'
+                        },
+                        link: function (scope, elem, attrs) {
+
+                            scope.$watch('product', function (newValue, oldValue) {
+
+                                if (newValue) {
+                                    elem.text(LoanCalculator[scope.type](newValue));
+                                }
+
+                            }, true);
+
+                        }
+                    }
+
+                }])
+            ;
         }
     };
 

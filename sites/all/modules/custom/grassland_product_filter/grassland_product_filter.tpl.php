@@ -47,15 +47,15 @@
       <div class="result-detail">
         <div class="refund-col">
           <div class="name">每月偿还</div>
-          <div class="value">￥ {{ result.perMonth }}</div>
+          <div class="value">￥ <span gl-loan type="perMonth" selected-product="selectedProduct">{{ result.perMonth }}</span></div>
         </div>
         <div class="rate-col">
           <div class="name">利率</div>
-          <div class="value">{{ result.rate }}%</div>
+          <div class="value"><span gl-loan type="rate" selected-product="selectedProduct">{{ result.rate }}</span>%</div>
         </div>
         <div class="totle-col">
           <div class="name">总共偿还</div>
-          <div class="value">￥ {{ result.total }}</div>
+          <div class="value">￥ <span gl-loan type="total" selected-product="selectedProduct">{{ result.total }}</span></div>
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@
       </div>
     </div>
     <div class="test-tag-container">
-    <a href="#{{product.nid}}"  ng-repeat="product in products" class="test-tag">{{product.title}}</a>
+    <a href="javascript:void(0)" ng-repeat="product in products" class="test-tag" ng-click="setSelectedProduct(product)">{{product.title}}</a>
     </div>
     <div class="arrow-bg"></div>
   </div>
